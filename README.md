@@ -39,6 +39,7 @@ Open a new chat and type `check Boom health`. After every Boom update, refresh t
 | Excel | `Open budget.xlsx in Documents and total column C` | Reads and writes the sheet without the mouse |
 | Code / Git | `Run git status in my-app and summarize the changes` | A summary; pushing needs approval |
 | This PC | `When did my PC last sleep, and for how long?` | From the Windows event log |
+| 3D | `Make a solid-wood dining chair in SketchUp, buildable so I can make it for real; save it as Documents\boom-3d\chair.skp` | GPT asks what is still open, works in a craftsperson's stages, checks every side and hands over with a cut list |
 
 Tips: say the result you want and let GPT choose how. Add `send a screenshot of the result` to see the outcome. On iPhone, ChatGPT may show the task card only when the work is done; Boom Control's **Tasks** page shows it live.
 
@@ -57,19 +58,35 @@ Grey bar: Boom is only looking. Orange with a big 3 · 2 · 1 in the middle: Boo
 
 Ordinary deletes go to the Recycle Bin and the card offers **Restore** for exactly that delete (never over a file that now has the same name). Permanent deletion happens only when you ask for it. Where Windows would delete permanently without asking (network or removable drives, items larger than the bin), Boom refuses instead.
 
-## 7. Other AI apps
+## 7. 3D work and craft know-how
+
+Boom gives every AI the same **craft know-how**, so results are things you can use, not boxes stuck together:
+- **Knowledge from validated occupational standards** (Thailand's TPQI, the EU's ESCO) per kind of work: perspective and thinking in 3D, 3D modelling, characters (games, animation), architecture, construction, product design, and joints and assembly.
+- **Asks first** when the request does not say: the level of detail (mock-up, detailed, or buildable, taken apart and made for real) and which file to work in (a new one, the open one, or a named one).
+- **Buildable models:** every part is a separate piece with its joints (tenons and mortises, corner blocks, screws with pilot holes), checked so no two parts overlap and the object comes apart step by step, with exploded and per-part pictures and a cut list taken from the model.
+- **Each object is one group,** and repeated parts share one definition.
+- Every stage has a checkpoint, and a hand-over note says what was made, the standards used, what was checked and how to rebuild it.
+
+Software:
+- **Blender** (characters, organic forms, objects): needs Blender 4.2 or later. Boom looks at a .blend from every side (top, bottom, left, right, front, back, iso and eye level) with sizes in metres, with the file's scripts disabled and without saving over it.
+- **SketchUp** (houses, buildings, furniture): GPT drives SketchUp with scripts in its own window, which opens, works, saves and closes. Cutting joints with Solid Tools needs SketchUp Pro.
+- Give Boom a workspace folder it may write to first (Boom Control → Workspace).
+
+Add your own know-how: put folders with a `SKILL.md` in `%LOCALAPPDATA%\BoomLocalMCP\knowhow`. Boom reads them as text only, never runs scripts that come with them, and know-how can never skip an approval.
+
+## 8. Other AI apps
 
 Boom works with **ChatGPT** today. Claude (Desktop/Code), Gemini/Antigravity, Grok and local LLMs are planned; this guide will list how to connect each one when it is ready.
 
-## 8. Help
+## 9. Help
 
 Boom Control → **Report a problem**: creates a diagnostics file and drafts an email to boomhothkub@gmail.com (Boom sends nothing by itself).
 
-## 9. What comes next
+## 10. What comes next
 
 See [ROADMAP.md](ROADMAP.md): what is being built now and the order after it.
 
-## 10. Uninstall
+## 11. Uninstall
 
 Open Windows Settings → Apps → Installed apps → **Boom Local MCP** → Uninstall. You can choose to also delete your Boom data (connection, API key, history, settings).
 
