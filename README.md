@@ -64,7 +64,8 @@ Boom gives every AI the same **craft know-how**, so results are things you can u
 - **Knowledge from validated occupational standards** (Thailand's TPQI, the EU's ESCO) per kind of work: perspective and thinking in 3D, 3D modelling, characters (games, animation), architecture, construction, product design, and joints and assembly.
 - **Checked at the start of every task.** 3D is the first kind of work with know-how, and more kinds will follow. For work it does not cover yet, GPT simply goes on.
 - **Asks only what you have not said clearly:** the level of detail (mock-up, detailed, or buildable, taken apart and made for real) and which file to work in (a new one, the open one, or a named one). What you said clearly is not asked again. What was unclear (for example "make it nice") may be asked to clarify. What you did not say is asked before starting. Boom makes sure of it: the work does not start, and SketchUp or Blender does not open, until your own answer settles each question. You can also say "up to you", or drop the work.
-- **Buildable models:** every part is a separate piece with its joints (tenons and mortises, corner blocks, screws with pilot holes), checked so no two parts overlap and the object comes apart step by step, with exploded and per-part pictures and a cut list taken from the model.
+- **Buildable models:** every part is a separate piece with its joints (tenons and mortises, corner blocks, screws with pilot holes), with exploded and per-part pictures and a cut list taken from the model.
+- **Boom checks SketchUp models itself:** on a copy, in its own SketchUp window for about half a minute. It finds parts that overlap (a missing hole), parts that touch nothing, fasteners that hold nothing, and takes the cut list from the model. Buildable work is not marked done until Boom's check of the final file is clean.
 - **Each object is one group,** and repeated parts share one definition.
 - Every stage has a checkpoint, and a hand-over note says what was made, the standards used, what was checked and how to rebuild it.
 
@@ -73,6 +74,8 @@ Software:
 - **SketchUp** (houses, buildings, furniture): if the *MCP Server for SketchUp* extension is installed, GPT opens SketchUp with its MCP server already started, so you don't need to click Extensions → MCP Server for SketchUp → Start Server. Otherwise GPT drives SketchUp with scripts in its own window, which opens, works, saves and closes. Cutting joints with Solid Tools needs SketchUp Pro.
 - Give Boom a workspace folder it may write to first (Boom Control → Workspace).
 - **Your apps can be anywhere.** Boom finds them on your PC, including other drives, and remembers where each app was opened from. If an app is somewhere Boom cannot find (a portable copy, for example), tell GPT its full path once.
+
+**Following the work:** the task card shows what Boom itself saw last (for example "writing build.rb", "opening SketchUp"), and "ChatGPT is thinking or writing" when no command has come for a while, so you can tell where the work is even when ChatGPT reports its steps late.
 
 Add your own know-how: put folders with a `SKILL.md` in `%LOCALAPPDATA%\BoomLocalMCP\knowhow`. Boom reads them as text only, never runs scripts that come with them, and know-how can never skip an approval.
 
