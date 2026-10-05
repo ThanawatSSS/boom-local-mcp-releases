@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-05 · รุ่นล่าสุดที่ปล่อยแล้ว: r35 · [English below](#english)
+อัปเดต 2026-10-05 · รุ่นล่าสุดที่ปล่อยแล้ว: r36 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -17,11 +17,17 @@
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
 
+## ปล่อยแล้วใน r36: ใช้ Know-how ทุกงาน ถามเฉพาะที่ยังไม่ชัด และหาโปรแกรมได้ทุกเครื่อง
+
+- AI ดู Know-how ทุกครั้งที่เริ่มงาน ไม่ใช่แค่งาน 3D แล้วเลือกใช้ตามประเภทงาน
+- ถามเฉพาะสิ่งที่ยังไม่ได้บอกชัด: บอกชัดแล้วไม่ถามซ้ำ บอกแต่ยังไม่ชัดอาจถามให้ชัด ไม่ได้บอกเลยถามก่อนเริ่ม
+- เปิด SketchUp พร้อมเริ่ม MCP ในขั้นเดียว (เมื่อติดตั้งส่วนเสริม MCP Server for SketchUp)
+- หาโปรแกรมในเครื่องของคุณเอง รวมถึงไดรฟ์อื่น และจำว่าแต่ละโปรแกรมเปิดจากที่ไหน
+
 ## กำลังทำต่อ: MCP Hub (ต่อโปรแกรมอื่นผ่าน Boom ทางเดียว)
 
 - โปรแกรมที่มี MCP ของตัวเอง (เช่น SketchUp, Blender) ต่อเข้า ChatGPT ผ่าน Boom ทางเดียว ไม่ต้องเปิด Tunnel แยกต่อโปรแกรม
-- สั่งแค่ "ทำงานนี้ใน SketchUp" Boom เปิดโปรแกรมและเริ่ม MCP ให้เอง
-- ถ้าไม่ได้บอกว่าให้ทำในไฟล์ไหน (ไฟล์ใหม่ ไฟล์ที่เปิดอยู่ หรือไฟล์ที่ระบุ) AI จะถามก่อนเริ่ม
+- สั่งแค่ "ทำงานนี้ใน SketchUp" Boom เปิดโปรแกรม เริ่ม MCP และต่อให้ใช้ได้ทันที (r36 เปิดพร้อมเริ่ม MCP ได้แล้ว)
 - คำสั่งที่มีผลจริงของโปรแกรมเหล่านั้นผ่านการอนุมัติของ Boom
 
 ## ต่อจากนั้น
@@ -41,7 +47,7 @@
 
 ## English
 
-Updated 2026-10-05 · latest release: r35
+Updated 2026-10-05 · latest release: r36
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -64,11 +70,17 @@ Tried already: the same chair built both ways. With know-how it was usable; with
 
 See section 7 of the guide.
 
+### Released in r36: know-how for every task, asking only what is unclear, apps found on every PC
+
+- The AI checks know-how at the start of every task, not only 3D, and takes what fits the kind of work.
+- It asks only what you have not said clearly. It does not ask again what you said clearly, may ask what you said unclearly, and asks before starting what you did not say.
+- SketchUp opens with its MCP started in one step, when the MCP Server for SketchUp extension is installed.
+- Boom finds apps on your PC, including other drives, and remembers where each app was opened from.
+
 ### Now: the MCP hub (other apps through one Boom connection)
 
 - Apps that have their own MCP (for example SketchUp and Blender) reach ChatGPT through Boom's single connection, with no tunnel per app.
-- Say "do this in SketchUp", and Boom opens the app and starts its MCP.
-- If you did not say which file to work in (a new file, the open one, or a named file), the AI asks first.
+- Say "do this in SketchUp", and Boom opens the app, starts its MCP and connects it, ready to use. r36 already opens it with the MCP started.
 - The apps' consequential commands go through Boom's approvals.
 
 ### After that
