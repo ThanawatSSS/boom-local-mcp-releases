@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-05 · รุ่นล่าสุดที่ปล่อยแล้ว: r36 · [English below](#english)
+อัปเดต 2026-10-06 · รุ่นล่าสุดที่ปล่อยแล้ว: r37 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,12 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r37: ถามก่อนเริ่มงานจริง
+
+- งานยังไม่เริ่มและยังไม่เปิด SketchUp หรือ Blender จนกว่าคำตอบของคุณเองจะตอบคำถามที่จำเป็นครบ AI เดาแทนไม่ได้
+- ตอบว่า "แล้วแต่คุณ" หรือ "ไม่เอาแล้ว" ก็ได้ งานอื่นที่ไม่มีคำถามทำได้ตามปกติ
+- ภาพหน้าจอ SketchUp ไม่ขาวแล้ว
 
 ## ปล่อยแล้วใน r36: ใช้ Know-how ทุกงาน ถามเฉพาะที่ยังไม่ชัด และหาโปรแกรมได้ทุกเครื่อง
 
@@ -47,7 +53,7 @@
 
 ## English
 
-Updated 2026-10-05 · latest release: r36
+Updated 2026-10-06 · latest release: r37
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -69,6 +75,12 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r37: asking before the work, for real
+
+- The work does not start, and SketchUp or Blender does not open, until your own answers settle the questions it needs. The AI cannot guess them for you.
+- You can answer "up to you" or drop the work. Work with no questions runs as usual.
+- SketchUp screenshots are no longer blank white.
 
 ### Released in r36: know-how for every task, asking only what is unclear, apps found on every PC
 
