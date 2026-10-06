@@ -101,7 +101,17 @@ Many apps have their own MCP, a way for an AI to use them directly. Add an app's
 
 ## 9. Other AI apps
 
-Boom works with **ChatGPT** today, and with **Codex** (desktop) through the same ChatGPT connection: Codex uses its own tools first and Boom for know-how, your apps' MCP and approvals. Claude (Desktop/Code), Gemini/Antigravity, Grok and local LLMs are planned; this guide will list how to connect each one when it is ready.
+- **ChatGPT** and **Codex** (desktop) connect through the Boom plugin (section 2). Codex uses its own tools first and Boom for know-how, your apps' MCP and approvals.
+- **Claude Desktop, Claude Code, WorkBuddy, Antigravity and Cline** connect on this PC:
+  1. Open Boom Control → **แอป AI**.
+  2. Press **เชื่อมต่อ** next to the app.
+  3. Close and open that app once.
+
+  Boom adds one entry, "boom", to the app's own MCP settings (a copy of the file is kept first). The app then starts Boom's connector, `boom-connect.exe`, which reaches the Boom already running on this PC.
+  - **Same Boom for every app:** the same know-how, your apps' MCP, inspectors, task card and approvals. Every record says which app asked.
+  - **Approvals:** these apps show no Boom card, so a request that needs your approval comes up in Boom Control with a notification. Decide there, then tell the AI.
+  - **Disconnect** on the same page removes Boom's entry and stops that app's access.
+- Grok, Freebuff and local LLMs are planned.
 
 ## 10. Help
 

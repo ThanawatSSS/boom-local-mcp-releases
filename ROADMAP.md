@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r41 · [English below](#english)
+อัปเดต 2026-10-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r42 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,13 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r42: Claude, WorkBuddy และแอป AI อื่นใช้ Boom ได้
+
+- **แอป AI บนเครื่องนี้ต่อ Boom ได้:** Claude Desktop, Claude Code, WorkBuddy, Antigravity และ Cline กดเชื่อมต่อที่ Boom Control → แอป AI แล้วเปิดแอปใหม่หนึ่งครั้ง
+- **Boom ตัวเดียวกันทุกแอป:** Know-how, MCP ของแอป, การตรวจงาน, การ์ดงาน และการอนุมัติชุดเดียวกับ ChatGPT ทุกบันทึกบอกว่าแอปไหนสั่ง
+- **การอนุมัติจากแอปที่ไม่มีการ์ด** ขึ้นใน Boom Control ทันทีพร้อมแจ้งเตือน
+- **ปลอดภัย:** ตัวเชื่อมต่อได้เฉพาะ Boom ของผู้ใช้ Windows คนนี้ แอปที่ไม่ได้เชื่อมต่อถูกปฏิเสธ และเลิกเชื่อมต่อได้ทุกเมื่อ
 
 ## ปล่อยแล้วใน r41: งานมีเส้นทางและการตรวจ สร้างจากแบบแปลน และทำงานในโมเดลของคุณเอง
 
@@ -64,9 +71,13 @@
 
 ## กำลังทำต่อ: AI ตัวอื่นใช้ Boom ได้ และ DeepSeek Harness
 
-1. **Claude และ WorkBuddy ใช้ Boom ได้:** เพื่อใช้ทดสอบผลของงานถัดไปด้วย AI มากกว่าหนึ่งตัว
-2. **DeepSeek Harness:** นำวิธีทำงานของ DeepSeek Harness เข้ามาใน Boom
-3. **Boom Control ต่อกับแอป AI ได้หลายตัว:** Claude, Antigravity, Freebuff, Cline และ WorkBuddy
+**v0.6.0 (Major update): ความสามารถของ DeepSeek Harness สร้างใหม่ใน Boom ใช้โมเดลเดียว**
+1. **Code mode:** AI เขียนโปรแกรมเดียวที่เรียกเครื่องมือหลายตัว แทนการเรียกทีละครั้งหลายสิบรอบ
+2. **งานเบื้องหลัง:** งานยาวไม่ติดเพดานเวลาของการเรียก ดูความคืบหน้าและรอได้
+3. **กันวนซ้ำ และผลลัพธ์ใหญ่:** เตือนเมื่อเรียกเหมือนเดิมซ้ำ ผลยาวเก็บเป็นไฟล์ให้อ่านต่อ
+4. ต่อจากนั้น: อ่านก่อนแก้ไฟล์, สรุปไฟล์ที่งานเปลี่ยน, Terminal ที่จำกัดการเขียน, ค้นงานเก่า และโหมด API สำหรับผู้ที่ใส่ API key เอง
+
+ทดสอบด้วย ChatGPT, Codex, Claude และ WorkBuddy บนงานเดียวกัน ก่อนและหลัง
 
 ## ต่อจากนั้น
 
@@ -85,7 +96,7 @@
 
 ## English
 
-Updated 2026-10-07 · latest release: r41
+Updated 2026-10-07 · latest release: r42
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -107,6 +118,13 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r42: Claude, WorkBuddy and other AI apps on Boom
+
+- **AI apps on this PC connect to Boom:** Claude Desktop, Claude Code, WorkBuddy, Antigravity and Cline. Press connect in Boom Control → แอป AI, then open the app again once.
+- **The same Boom for every app:** the same know-how, your apps' MCP, inspectors, task card and approvals as ChatGPT. Every record says which app asked.
+- **Approvals from apps without Boom's card** come up in Boom Control at once, with a notification.
+- **Safe:** the connector reaches only this Windows user's Boom. An app that is not connected is refused, and you can disconnect it at any time.
 
 ### Released in r41: routes and checks, building from plans, working in your own model
 
@@ -155,9 +173,13 @@ See section 7 of the guide.
 
 ### Now: more AI apps on Boom, and the DeepSeek Harness
 
-1. **Claude and WorkBuddy use Boom:** so the next work can be tested with more than one AI.
-2. **DeepSeek Harness:** the DeepSeek Harness way of working, brought into Boom.
-3. **Boom Control connects AI apps:** Claude, Antigravity, Freebuff, Cline and WorkBuddy.
+**v0.6.0 (major update): DeepSeek Harness capabilities rebuilt in Boom, one model**
+1. **Code mode:** the AI writes one program that calls many tools, instead of dozens of separate calls.
+2. **Background jobs:** long work is not cut off by a call's time limit; you can follow it and wait for it.
+3. **Loop guard and big results:** a reminder when the same call repeats, and long output kept as a file to read on.
+4. After that: read before editing a file, what each task changed, a confined terminal, searching earlier work, and an API mode for those who give their own key.
+
+Tested on ChatGPT, Codex, Claude and WorkBuddy with the same work, before and after.
 
 ### After that
 
