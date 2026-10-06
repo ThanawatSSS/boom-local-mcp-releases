@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-06 · รุ่นล่าสุดที่ปล่อยแล้ว: r39 · [English below](#english)
+อัปเดต 2026-10-06 · รุ่นล่าสุดที่ปล่อยแล้ว: r40 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,14 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r40: ตรวจว่าโครงสร้างรับน้ำหนักได้จริง
+
+- **ของที่คนนั่ง ยืน พิง หรืออยู่อาศัย ตรวจแรงก่อนส่งงาน:** AI คิดแรงด้วยมือก่อน แล้วตรวจโครงด้วยโมเดลคานตามแรงทดสอบของมาตรฐาน (เช่น EN 16139 สำหรับเก้าอี้) และบอกเสมอว่าเป็นผลคำนวณ ไม่ใช่การทดสอบจริงหรือการรับรองของวิศวกร
+- **บ้านและอาคาร:** น้ำหนักบรรทุกจรและแรงลมตามกฎกระทรวง พ.ศ. 2566 และงานที่กฎหมายให้วิศวกรโยธาที่มีใบอนุญาตออกแบบและรับรอง (เช่น อาคาร 3 ชั้นขึ้นไป หรือเสาห่างกันตั้งแต่ 5 เมตร)
+- **เฟอร์นิเจอร์เหล็ก:** เหล็กไม่ทะลุเบาะ ข้อต่อเชื่อมแนบกันโดยตรงแทนหูยื่นที่หักง่าย พนักโค้งตามเบาะกลม และขนาดท่อมาจากการคำนวณ พร้อมตัวอย่างเก้าอี้เหล็กที่ทดสอบแล้วใน SketchUp 2026
+- **เทียบกับรูปอ้างอิง:** วัดสัดส่วนจากรูปก่อนสร้าง และเทียบจากมุมกล้องเดียวกับรูป
+- ชุดคำสั่งช่วยของ SketchUp เชื่อมโครงเหล็กได้เสถียรขึ้น และการตรวจของ Boom ไม่นับโครงเชื่อมเป็นตัวยึดแล้ว
 
 ## ปล่อยแล้วใน r39: MCP Hub และใช้เครื่องมือของแอป AI ก่อน
 
@@ -66,7 +74,7 @@
 
 ## English
 
-Updated 2026-10-06 · latest release: r39
+Updated 2026-10-06 · latest release: r40
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -88,6 +96,14 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r40: checking that structures really hold
+
+- **What people sit, stand, lean on or live in is checked before it is handed over:** the AI does a hand check first, then a beam model of the frame under the standard's test loads (for example EN 16139 for chairs), and always says it is a calculation, not a test or an engineer's approval.
+- **Houses and buildings:** live loads and wind from Thailand's B.E. 2566 regulation, and the work the law reserves for a licensed civil engineer (for example 3 storeys or more, or columns 5 m or more apart).
+- **Steel furniture:** no steel through the seat, welded joints that meet directly instead of short lugs that break, a back that follows a round seat, and tube sizes from the calculation, with a steel chair example tested in SketchUp 2026.
+- **Matching a reference photo:** its proportions are measured before building, and the model is compared from the photo's own camera.
+- SketchUp's helpers weld steel frames more reliably, and Boom's check no longer counts a welded frame as a fastener.
 
 ### Released in r39: the MCP hub, and the AI app's own tools first
 
