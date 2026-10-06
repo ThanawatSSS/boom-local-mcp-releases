@@ -33,7 +33,8 @@ Open a new chat and type `check Boom health`. After every Boom update, refresh t
 | Type in an app | `Open Notepad and type "Hello from Boom", don't save` | Boom's bar appears; Boom checks the text landed |
 | Use any app | `Open Paint and draw a small house with a roof, a door and windows` | The task card shows the steps and the latest picture |
 | Browser | `Play any song in the YouTube Music tab in Brave` | Boom finds the tab directly |
-| Files | `Create notes.txt in Documents saying "meeting Monday"` | A file in an allowed folder |
+| Files | `Create notes.txt in Documents saying "meeting Monday"` | A file where you said |
+| Your apps' MCP | `Add the Blender MCP that Claude Code has to Boom` | Boom imports it, checks for conflicts, and every AI app on Boom can use it |
 | Delete | `Delete report-old.txt in Documents` | An approval card, then the Recycle Bin (restorable) |
 | Delete by rule | `Delete the .tmp files in Downloads older than Oct 1 except keep.tmp` | GPT restates the rule; one card shows the count, folders and the full list |
 | Excel | `Open budget.xlsx in Documents and total column C` | Reads and writes the sheet without the mouse |
@@ -71,27 +72,38 @@ Boom gives every AI the same **craft know-how**, so results are things you can u
 
 Software:
 - **Blender** (characters, organic forms, objects): needs Blender 4.2 or later. Boom looks at a .blend from every side (top, bottom, left, right, front, back, iso and eye level) with sizes in metres, with the file's scripts disabled and without saving over it.
-- **SketchUp** (houses, buildings, furniture): if the *MCP Server for SketchUp* extension is installed, GPT opens SketchUp with its MCP server already started, so you don't need to click Extensions → MCP Server for SketchUp → Start Server. Otherwise GPT drives SketchUp with scripts in its own window, which opens, works, saves and closes. Cutting joints with Solid Tools needs SketchUp Pro.
-- Give Boom a workspace folder it may write to first (Boom Control → Workspace).
+- **SketchUp** (houses, buildings, furniture): built into Boom's MCP hub (section 8). With the *MCP Server for SketchUp* extension installed, Boom opens SketchUp with its MCP on, with no clicks, and GPT builds with scripts whose errors come back with the exact line, using Boom's tested helpers. The Ruby Console is never needed. Cutting joints with Solid Tools needs SketchUp Pro.
+- With a Blender MCP add-on in Boom (section 8), Boom opens Blender with it started too.
+- **Where files go:** say it in your request (`save it in D:\3D_models\chairs`); if you don't, GPT asks. There is no list of folders to set up. Boom never touches Windows, installed programs, apps' settings and sign-ins, its own data or secret files.
 - **Your apps can be anywhere.** Boom finds them on your PC, including other drives, and remembers where each app was opened from. If an app is somewhere Boom cannot find (a portable copy, for example), tell GPT its full path once.
 
 **Following the work:** the task card shows what Boom itself saw last (for example "writing build.rb", "opening SketchUp"), and "ChatGPT is thinking or writing" when no command has come for a while, so you can tell where the work is even when ChatGPT reports its steps late.
 
 Add your own know-how: put folders with a `SKILL.md` in `%LOCALAPPDATA%\BoomLocalMCP\knowhow`. Boom reads them as text only, never runs scripts that come with them, and know-how can never skip an approval.
 
-## 8. Other AI apps
+## 8. Your apps' MCP (MCP Hub)
 
-Boom works with **ChatGPT** today. Claude (Desktop/Code), Gemini/Antigravity, Grok and local LLMs are planned; this guide will list how to connect each one when it is ready.
+Many apps have their own MCP, a way for an AI to use them directly. Add an app's MCP to Boom once and every AI app connected to Boom can use it, with no setup in each one.
+- **SketchUp is built in** (it needs the *MCP Server for SketchUp* extension in SketchUp).
+- **Already set up in Claude Code, Claude Desktop or Codex?** Boom Control → **MCP ของแอป** lists them: press **Import**. Or ask GPT: `Add the blender MCP from Claude Code to Boom`.
+- **A new one:** ask GPT to add it from its setup instructions, or add it in Boom Control.
+- **Boom checks for conflicts every time:** one that is already there (GPT asks whether to replace it), two apps on the same port, or anything that would break Boom (refused). For other conflicts you choose: change the settings, or add it anyway with the warning kept.
+- When an app's MCP needs the app open, Boom opens it. Calls need no approval card; each one is recorded and shown on the task card.
+- Keys and tokens are stored encrypted; GPT sees only their names.
 
-## 9. Help
+## 9. Other AI apps
+
+Boom works with **ChatGPT** today, and with **Codex** (desktop) through the same ChatGPT connection: Codex uses its own tools first and Boom for know-how, your apps' MCP and approvals. Claude (Desktop/Code), Gemini/Antigravity, Grok and local LLMs are planned; this guide will list how to connect each one when it is ready.
+
+## 10. Help
 
 Boom Control → **Report a problem**: creates a diagnostics file and drafts an email to boomhothkub@gmail.com (Boom sends nothing by itself).
 
-## 10. What comes next
+## 11. What comes next
 
 See [ROADMAP.md](ROADMAP.md): what is being built now and the order after it.
 
-## 11. Uninstall
+## 12. Uninstall
 
 Open Windows Settings → Apps → Installed apps → **Boom Local MCP** → Uninstall. You can choose to also delete your Boom data (connection, API key, history, settings).
 

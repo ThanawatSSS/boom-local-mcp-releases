@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-06 · รุ่นล่าสุดที่ปล่อยแล้ว: r38 · [English below](#english)
+อัปเดต 2026-10-06 · รุ่นล่าสุดที่ปล่อยแล้ว: r39 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,15 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r39: MCP Hub และใช้เครื่องมือของแอป AI ก่อน
+
+- **MCP Hub:** MCP ของโปรแกรม (SketchUp มีให้แล้ว, Blender และอื่น ๆ นำเข้าหรือเพิ่มได้) ต่อเข้า Boom ครั้งเดียว AI ทุกตัวที่ต่อ Boom ใช้ได้ ไม่ต้องตั้งในแต่ละแอป Boom เปิดโปรแกรมพร้อม MCP ให้เอง และตรวจการชนกันทุกครั้ง
+- **SketchUp เร็วขึ้นมาก:** สั่งสคริปต์ผ่าน MCP ได้ผลหรือบรรทัดที่ผิดกลับมาทันที พร้อมชุดคำสั่งช่วยที่ทดสอบแล้ว (ท่อ ห่วง งานเชื่อม ฉาก บันทึก) ไม่ต้องเปิด Ruby Console
+- **ใช้เครื่องมือของแอป AI ก่อน:** ถ้าแอป AI มีเครื่องมือของตัวเอง (เช่น Codex) ให้ใช้ของตัวเอง Boom ให้ Know-how, MCP ของแอป, การตรวจงาน และการอนุมัติ
+- **เก็บงานในที่ที่คุณบอก:** ไม่ต้องตั้งรายการโฟลเดอร์ไว้ก่อน ถ้าไม่ได้บอก AI จะถาม Boom ยังไม่แตะ Windows โปรแกรม การตั้งค่าของแอปอื่น ข้อมูลของ Boom และไฟล์รหัสลับ
+- **Know-how บอกวิธีเปิดทุกแอปให้พร้อมใช้:** เปิดยังไง ทำงานยังไง เมนูอยู่ตรงไหน และอะไรห้ามทำ
+- การ์ดงานบอกเวลาของแต่ละขั้นจากนาฬิกาของ Boom เอง
 
 ## ปล่อยแล้วใน r38: Boom ตรวจงานเอง และบอกว่ากำลังทำอะไรจากที่เห็นจริง
 
@@ -36,11 +45,9 @@
 - เปิด SketchUp พร้อมเริ่ม MCP ในขั้นเดียว (เมื่อติดตั้งส่วนเสริม MCP Server for SketchUp)
 - หาโปรแกรมในเครื่องของคุณเอง รวมถึงไดรฟ์อื่น และจำว่าแต่ละโปรแกรมเปิดจากที่ไหน
 
-## กำลังทำต่อ: MCP Hub (ต่อโปรแกรมอื่นผ่าน Boom ทางเดียว)
+## กำลังทำต่อ: Know-how ของแต่ละแอป
 
-- โปรแกรมที่มี MCP ของตัวเอง (เช่น SketchUp, Blender) ต่อเข้า ChatGPT ผ่าน Boom ทางเดียว ไม่ต้องเปิด Tunnel แยกต่อโปรแกรม
-- สั่งแค่ "ทำงานนี้ใน SketchUp" Boom เปิดโปรแกรม เริ่ม MCP และต่อให้ใช้ได้ทันที (r36 เปิดพร้อมเริ่ม MCP ได้แล้ว)
-- คำสั่งที่มีผลจริงของโปรแกรมเหล่านั้นผ่านการอนุมัติของ Boom
+- เพิ่มวิธีเปิดให้พร้อมใช้และแผนที่เมนูของแอปอื่น ๆ ทีละแอป (SketchUp และ Blender มีแล้ว)
 
 ## ต่อจากนั้น
 
@@ -59,7 +66,7 @@
 
 ## English
 
-Updated 2026-10-06 · latest release: r38
+Updated 2026-10-06 · latest release: r39
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -82,6 +89,15 @@ Tried already: the same chair built both ways. With know-how it was usable; with
 
 See section 7 of the guide.
 
+### Released in r39: the MCP hub, and the AI app's own tools first
+
+- **MCP hub:** an app's MCP (SketchUp built in; Blender and others imported or added) is added to Boom once, and every AI app on Boom can use it with no setup in each. Boom opens the app with its MCP on and checks for conflicts every time.
+- **Much faster SketchUp work:** scripts run through its MCP and return the result or the failing line at once, with tested helpers (tubes, rings, welds, scenes, saving). The Ruby Console is never needed.
+- **The AI app's own tools first:** when the AI app has its own tools (for example Codex), it uses them; Boom brings know-how, the apps' MCP, checks and approvals.
+- **Files where you said:** no folder list to set up; if you don't say where, the AI asks. Boom still never touches Windows, programs, other apps' settings, its own data or secret files.
+- **Know-how says how to open every app ready:** how to open it, how to work in it, where its menus are, and what never to do.
+- The task card shows each step's time from Boom's own clock.
+
 ### Released in r38: Boom checks the work itself and says what it saw
 
 - Boom checks SketchUp models itself: overlapping parts, loose parts, fasteners that hold nothing, and the cut list from the model.
@@ -101,11 +117,9 @@ See section 7 of the guide.
 - SketchUp opens with its MCP started in one step, when the MCP Server for SketchUp extension is installed.
 - Boom finds apps on your PC, including other drives, and remembers where each app was opened from.
 
-### Now: the MCP hub (other apps through one Boom connection)
+### Now: know-how for each app
 
-- Apps that have their own MCP (for example SketchUp and Blender) reach ChatGPT through Boom's single connection, with no tunnel per app.
-- Say "do this in SketchUp", and Boom opens the app, starts its MCP and connects it, ready to use. r36 already opens it with the MCP started.
-- The apps' consequential commands go through Boom's approvals.
+- How to open each app ready and where its menus are, app by app (SketchUp and Blender are done).
 
 ### After that
 
