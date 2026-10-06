@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-06 · รุ่นล่าสุดที่ปล่อยแล้ว: r40 · [English below](#english)
+อัปเดต 2026-10-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r41 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,15 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r41: งานมีเส้นทางและการตรวจ สร้างจากแบบแปลน และทำงานในโมเดลของคุณเอง
+
+- **ค่าเริ่มต้นคือแบบละเอียด:** ไม่ต้องตอบเรื่องระดับรายละเอียดก่อนเริ่มแล้ว อยากได้เร็ว ๆ บอกในแชตว่า "ร่างคร่าวๆ" หรือ "ทำเร็วๆ" อยากเอาไปทำจริงบอก "ละเอียดพิเศษ"
+- **งานมีเส้นทางและการตรวจ:** Boom บอก AI ว่างานนี้ต้องอ่าน Know-how อะไร ต้องผ่านการตรวจอะไร (เช่น แนวรับน้ำหนักของเก้าอี้ หรือเทียบกับรูปอ้างอิง) และต้องตอบสิ่งที่คุณขอทุกข้อก่อนปิดงาน การ์ดงานและ Boom Control แสดงครบ
+- **สร้างจากแบบแปลน PDF หรือรูป Layout:** Boom เปิดแปลนให้ AI ดู AI หามาตราส่วนและเช็กกับอีกระยะ วางแปลนใต้โมเดลตามขนาดจริง แล้วสร้างทับ
+- **ทำในโมเดลของคุณเอง:** แก้ อัปเดต หรือสร้างของใหม่แทนตำแหน่ง Object ตามชื่อ ของเดิมถูกซ่อนไว้ ไม่ได้ลบ
+- **SketchUp ต่อเนื่อง:** กดดูหน้าต่างที่ AI ใช้อยู่ได้ AI ทำต่อในไฟล์เดิม และไฟล์ใหม่ไม่มีคนจำลองของ template
+- **การตรวจของ Boom เร็วและแม่นขึ้น:** ไม่ค้างเกินเวลา ตรวจต่อจากเดิมได้ หาชิ้นที่ฝังในชิ้นอื่นเจอ และไม่ตัดสินชิ้นที่ยังตรวจไม่ครบ
 
 ## ปล่อยแล้วใน r40: ตรวจว่าโครงสร้างรับน้ำหนักได้จริง
 
@@ -53,9 +62,11 @@
 - เปิด SketchUp พร้อมเริ่ม MCP ในขั้นเดียว (เมื่อติดตั้งส่วนเสริม MCP Server for SketchUp)
 - หาโปรแกรมในเครื่องของคุณเอง รวมถึงไดรฟ์อื่น และจำว่าแต่ละโปรแกรมเปิดจากที่ไหน
 
-## กำลังทำต่อ: Know-how ของแต่ละแอป
+## กำลังทำต่อ: AI ตัวอื่นใช้ Boom ได้ และ DeepSeek Harness
 
-- เพิ่มวิธีเปิดให้พร้อมใช้และแผนที่เมนูของแอปอื่น ๆ ทีละแอป (SketchUp และ Blender มีแล้ว)
+1. **Claude และ WorkBuddy ใช้ Boom ได้:** เพื่อใช้ทดสอบผลของงานถัดไปด้วย AI มากกว่าหนึ่งตัว
+2. **DeepSeek Harness:** นำวิธีทำงานของ DeepSeek Harness เข้ามาใน Boom
+3. **Boom Control ต่อกับแอป AI ได้หลายตัว:** Claude, Antigravity, Freebuff, Cline และ WorkBuddy
 
 ## ต่อจากนั้น
 
@@ -63,7 +74,7 @@
 2. **Know-how ด้านเขียนโปรแกรม QA และออกแบบ:** วางไว้ในขั้นตอนการทำงานของ AI ให้หาจุดปัญหาจริงก่อน แล้วเลือก ออกแบบ และแก้ได้ถูก
 3. **เขียนโค้ดด้วยโมเดลเดียว:** ใช้ ChatGPT ตัวที่คุยอยู่ทำงานเองผ่าน Boom ไม่ต้องจ่ายโมเดลที่สอง และลดจำนวนรอบด้วยเครื่องมือที่ทำหลายขั้นในครั้งเดียว
 4. **Terminal:** หน้าต่างคำสั่งที่ AI ใช้ต่อเนื่องได้ คำสั่งที่มีผลจริงต้องอนุมัติ
-5. **AI ตัวอื่น:** เลือกได้ตอนติดตั้งว่าจะต่อ ChatGPT, Claude, Gemini/Antigravity, Grok หรือ Local LLM ต่อพร้อมกันได้หลายตัว และทุกบันทึกบอกว่า AI ตัวไหนสั่ง
+5. **AI ตัวอื่นอีก:** Grok หรือ Local LLM ต่อพร้อมกันได้หลายตัว และทุกบันทึกบอกว่า AI ตัวไหนสั่ง
 6. **AI ช่วยกันในเครื่อง:** ให้ AI ปรึกษา ตรวจงาน และส่งงานต่อกันในเครื่อง (เช่น GPT วางแผน Claude ตรวจ Gemini ลงมือ) ผ่านโปรแกรมของแต่ละเจ้าที่ใช้บัญชีเดิมของคุณ
 
 ## ก่อนปล่อย v0.5.0
@@ -74,7 +85,7 @@
 
 ## English
 
-Updated 2026-10-06 · latest release: r40
+Updated 2026-10-07 · latest release: r41
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -96,6 +107,15 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r41: routes and checks, building from plans, working in your own model
+
+- **Detailed is the default level:** the level is no longer asked before starting. Want it quick? Say "mock-up" or "quick" in the chat. To make it for real, say "buildable".
+- **Every piece of work has a route and checks:** Boom tells the AI which know-how to read, which checks to pass (for example a chair's load path, or matching the reference picture) and that every one of your requests must be answered before the work is done. The task card and Boom Control show them all.
+- **From a PDF floor plan or a layout picture:** Boom shows the plan to the AI; the AI finds and checks its scale, lays it under the model at real size and builds on it.
+- **In your own model:** edit, update, or make a new object in place of one you name; the old one is hidden, not deleted.
+- **SketchUp carries on:** you can look and click in the AI's SketchUp window; the AI carries on in the same file, and new files come without the template's figure.
+- **Boom's check is faster and sharper:** it always answers in time, continues where it stopped, finds a part buried inside another, and gives no verdict on parts it has not finished checking.
 
 ### Released in r40: checking that structures really hold
 
@@ -133,9 +153,11 @@ See section 7 of the guide.
 - SketchUp opens with its MCP started in one step, when the MCP Server for SketchUp extension is installed.
 - Boom finds apps on your PC, including other drives, and remembers where each app was opened from.
 
-### Now: know-how for each app
+### Now: more AI apps on Boom, and the DeepSeek Harness
 
-- How to open each app ready and where its menus are, app by app (SketchUp and Blender are done).
+1. **Claude and WorkBuddy use Boom:** so the next work can be tested with more than one AI.
+2. **DeepSeek Harness:** the DeepSeek Harness way of working, brought into Boom.
+3. **Boom Control connects AI apps:** Claude, Antigravity, Freebuff, Cline and WorkBuddy.
 
 ### After that
 
@@ -143,7 +165,7 @@ See section 7 of the guide.
 2. **Know-how for coding, QA and design:** built into the AI's workflow, so it finds the real problem first, then chooses, designs and fixes correctly.
 3. **Coding with one model:** the ChatGPT you are chatting with does the work through Boom, with no second model to pay for. Tools that do several steps in one call cut the round-trips.
 4. **Terminal:** a persistent terminal for the AI; consequential commands need approval.
-5. **More AI apps:** choose at setup to connect ChatGPT, Claude, Gemini/Antigravity, Grok or a local LLM. Several can be connected at once, and every record says which AI asked.
+5. **Still more AI apps:** Grok or a local LLM. Several can be connected at once, and every record says which AI asked.
 6. **AIs working together on your PC:** AIs consult, review and hand work to each other (for example, GPT plans, Claude reviews and Gemini executes) through each vendor's own app on your existing account.
 
 ### Before v0.5.0

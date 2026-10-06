@@ -64,10 +64,18 @@ Ordinary deletes go to the Recycle Bin and the card offers **Restore** for exact
 Boom gives every AI the same **craft know-how**, so results are things you can use, not boxes stuck together:
 - **Knowledge from validated occupational standards** (Thailand's TPQI, the EU's ESCO) per kind of work: perspective and thinking in 3D, 3D modelling, characters (games, animation), architecture, construction, product design, and joints and assembly.
 - **Checked at the start of every task.** 3D is the first kind of work with know-how, and more kinds will follow. For work it does not cover yet, GPT simply goes on.
-- **Asks only what you have not said clearly:** the level of detail (mock-up, detailed, or buildable, taken apart and made for real) and which file to work in (a new one, the open one, or a named one). What you said clearly is not asked again. What was unclear (for example "make it nice") may be asked to clarify. What you did not say is asked before starting. Boom makes sure of it: the work does not start, and SketchUp or Blender does not open, until your own answer settles each question. You can also say "up to you", or drop the work.
+- **Detailed is the standard level.** If you do not say, GPT models in detail, to your reference picture when you give one, and tells you so in one line.
+  - **Want it quick?** Say so in the chat: `mock-up`, `rough`, `quick`, `ร่างคร่าวๆ`, `ทำเร็วๆ` gives a mock-up (shape and proportion only).
+  - **Want to make it for real?** Say `buildable` (`ละเอียดพิเศษ`, `ทำได้จริง`, `ถอดชิ้น`): every part separate with its joints.
+  - You can change the level at any time in the chat.
+- **Asks only what you have not said clearly:** which file to work in (a new one, the open one, or a named one), and how it will be made when it is buildable. What you said clearly is not asked again. Boom makes sure of it: the work does not start, and SketchUp or Blender does not open, until your own answer settles each question. You can also say "up to you", or drop the work.
 - **Buildable models:** every part is a separate piece with its joints (tenons and mortises, corner blocks, screws with pilot holes), with exploded and per-part pictures and a cut list taken from the model.
 - **Boom checks SketchUp models itself:** on a copy, in its own SketchUp window for about half a minute. It finds parts that overlap (a missing hole), parts that touch nothing, fasteners that hold nothing, and takes the cut list from the model. Buildable work is not marked done until Boom's check of the final file is clean.
 - **Each object is one group,** and repeated parts share one definition.
+- **From a plan or a layout picture:** give a PDF floor plan or a picture of a layout (`build this office layout from D:\plans\level2.pdf`). Boom shows it to GPT, GPT finds its scale from a written dimension and checks it on a second one, lays the plan under the model at real size, builds on it and checks the top view against it.
+- **In your own model:** edit or update an object, or `make a new chair in place of the object named Chair 3`. The new one stands where the old one stood, turned the same way; the old one is hidden on the tag "Replaced by Boom", not deleted, and one Undo takes the change back.
+- **Clicking in the AI's SketchUp window is fine:** look around or click while it works; GPT carries on in the same file instead of opening it again.
+- **The checks and what you asked for are on the task card:** the know-how the work follows, the checks it must pass (for example the load path of a chair, or comparing with your reference picture), and each thing you asked for with GPT's answer. The work is not marked done while one is open.
 - Every stage has a checkpoint, and a hand-over note says what was made, the standards used, what was checked and how to rebuild it.
 
 Software:
