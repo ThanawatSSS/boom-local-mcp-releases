@@ -55,6 +55,8 @@ Tips: say the result you want and let GPT choose how. Add `send a screenshot of 
 
 Grey bar: Boom is only looking. Orange with a big 3 · 2 · 1 in the middle: Boom is about to use the mouse (only when you are using the PC). Blue: Boom is using mouse and keyboard; your clicks are held so they don't collide. Grey "waiting for the next step": use the PC freely. Hold **Esc** for one second to take control back at once.
 
+Screen work is lighter and lands where it should: after each action the AI gets only the controls that changed, clicks work on drawing canvases (Paint), and the AI can search a window for a control by name. Drawing in Paint has its own know-how (`open Paint and draw a house with a sun`).
+
 ## 6. Deleting and restoring
 
 Ordinary deletes go to the Recycle Bin and the card offers **Restore** for exactly that delete (never over a file that now has the same name). Permanent deletion happens only when you ask for it. Where Windows would delete permanently without asking (network or removable drives, items larger than the bin), Boom refuses instead.
@@ -62,7 +64,7 @@ Ordinary deletes go to the Recycle Bin and the card offers **Restore** for exact
 ## 7. 3D work and craft know-how
 
 Boom gives every AI the same **craft know-how**, so results are things you can use, not boxes stuck together:
-- **Knowledge from validated occupational standards** (Thailand's TPQI, the EU's ESCO) per kind of work: perspective and thinking in 3D, 3D modelling, characters (games, animation), architecture, construction, product design, and joints and assembly.
+- **Knowledge from validated occupational standards** (Thailand's TPQI, the EU's ESCO) per kind of work: perspective and thinking in 3D, 3D modelling, characters (games, animation), architecture, construction, product design, joints and assembly, and clean, light models. Chinese timber halls follow the Song building standard 营造法式 and measured surveys: the frame on every slope, bracket sets at every corner, the roof curve computed by its rule, doors on their pivots.
 - **Checked at the start of every task.** 3D is the first kind of work with know-how, and more kinds will follow. For work it does not cover yet, GPT simply goes on.
 - **Detailed is the standard level.** If you do not say, GPT models in detail, to your reference picture when you give one, and tells you so in one line.
   - **Want it quick?** Say so in the chat: `mock-up`, `rough`, `quick`, `ร่างคร่าวๆ`, `ทำเร็วๆ` gives a mock-up (shape and proportion only).
@@ -76,16 +78,22 @@ Boom gives every AI the same **craft know-how**, so results are things you can u
 - **In your own model:** edit or update an object, or `make a new chair in place of the object named Chair 3`. The new one stands where the old one stood, turned the same way; the old one is hidden on the tag "Replaced by Boom", not deleted, and one Undo takes the change back.
 - **Clicking in the AI's SketchUp window is fine:** look around or click while it works; GPT carries on in the same file instead of opening it again.
 - **The checks and what you asked for are on the task card:** the know-how the work follows, the checks it must pass (for example the load path of a chair, or comparing with your reference picture), and each thing you asked for with GPT's answer. The work is not marked done while one is open.
+- **Light enough for an ordinary PC:** Boom's SketchUp check also reports how heavy the model is (faces, triangles, textures, shadows) and slivers left by cuts; GPT keeps detail where it is seen and repeats as one definition.
+- **Buildings are counted:** the columns, purlins and rafters in the finished model must match the plan on every side, hip ends and corners included.
+- **Your brief decides:** a building you name is modelled as surveyed; when the brief leaves the choice, the AI says which building and period it chose and what that means for the look. Doors are shown partly open, so you see which side turns and which way.
+- **Boom checks 3D web pages itself:** one call shows the page from every side and in X-ray, counts its parts by type with their positions, and measures what it costs while you are not touching it, in your own Chrome on the graphics card.
+- **Light by design:** web pages are built to choose a light mode on weak devices (`?q=low` forces it), and the hand-over reports draw calls and the idle cost measured on the finished page.
 - Every stage has a checkpoint, and a hand-over note says what was made, the standards used, what was checked and how to rebuild it.
 
 Software:
 - **Blender** (characters, organic forms, objects): needs Blender 4.2 or later. Boom looks at a .blend from every side (top, bottom, left, right, front, back, iso and eye level) with sizes in metres, with the file's scripts disabled and without saving over it.
-- **SketchUp** (houses, buildings, furniture): built into Boom's MCP hub (section 8). With the *MCP Server for SketchUp* extension installed, Boom opens SketchUp with its MCP on, with no clicks, and GPT builds with scripts whose errors come back with the exact line, using Boom's tested helpers. The Ruby Console is never needed. Cutting joints with Solid Tools needs SketchUp Pro.
+- **SketchUp** (houses, buildings, furniture): built into Boom's MCP hub (section 8). With the *MCP Server for SketchUp* extension installed, Boom opens SketchUp with its MCP on, with no clicks, and GPT builds with scripts whose errors come back with the exact line, using Boom's tested helpers. The Ruby Console is never needed. GPT picks SketchUp's own tool that fits each part (Push/Pull, Follow Me, Intersect, Solid Tools); Solid Tools, for solid parts that join, need SketchUp Pro.
 - With a Blender MCP add-on in Boom (section 8), Boom opens Blender with it started too.
+- **A web page (Three.js):** one HTML file that opens from disk. It draws only when something changes, so it costs nothing while you are not touching it, and GPT checks it from every side with Chrome on your graphics card.
 - **Where files go:** say it in your request (`save it in D:\3D_models\chairs`); if you don't, GPT asks. There is no list of folders to set up. Boom never touches Windows, installed programs, apps' settings and sign-ins, its own data or secret files.
 - **Your apps can be anywhere.** Boom finds them on your PC, including other drives, and remembers where each app was opened from. If an app is somewhere Boom cannot find (a portable copy, for example), tell GPT its full path once.
 
-**Following the work:** the task card shows what Boom itself saw last (for example "writing build.rb", "opening SketchUp"), and "ChatGPT is thinking or writing" when no command has come for a while, so you can tell where the work is even when ChatGPT reports its steps late.
+**Following the work:** the task card shows what Boom itself saw last (for example "writing build.rb", "opening SketchUp"), and "ChatGPT is thinking or writing" (or the name of the AI app doing the work) when no command has come for a while, so you can tell where the work is even when the AI reports its steps late.
 
 Add your own know-how: put folders with a `SKILL.md` in `%LOCALAPPDATA%\BoomLocalMCP\knowhow`. Boom reads them as text only, never runs scripts that come with them, and know-how can never skip an approval.
 
@@ -102,7 +110,7 @@ Many apps have their own MCP, a way for an AI to use them directly. Add an app's
 ## 9. Other AI apps
 
 - **ChatGPT** and **Codex** (desktop) connect through the Boom plugin (section 2). Codex uses its own tools first and Boom for know-how, your apps' MCP and approvals.
-- **Claude Desktop, Claude Code, WorkBuddy, Antigravity and Cline** connect on this PC:
+- **Claude Desktop, Claude Code, WorkBuddy, Antigravity, Cline and Freebuff** connect on this PC:
   1. Open Boom Control → **แอป AI**.
   2. Press **เชื่อมต่อ** next to the app.
   3. Close and open that app once.
@@ -111,7 +119,9 @@ Many apps have their own MCP, a way for an AI to use them directly. Add an app's
   - **Same Boom for every app:** the same know-how, your apps' MCP, inspectors, task card and approvals. Every record says which app asked.
   - **Approvals:** these apps show no Boom card, so a request that needs your approval comes up in Boom Control with a notification. Decide there, then tell the AI.
   - **Disconnect** on the same page removes Boom's entry and stops that app's access.
-- Grok, Freebuff and local LLMs are planned.
+  - **Freebuff** asks you to approve Boom's entry in Freebuff before it runs it.
+- **Any other AI app:** Boom Control → **แอป AI** → **แอปอื่น**. Name it and press **สร้างการเชื่อมต่อ**: Boom shows the entry to copy into that app's MCP settings (its `mcpServers`), once. Restart the app. Each connection has its own key, its tasks show its name, and **ลบ** on the same page stops it.
+- Grok and local LLMs are planned.
 
 ## 10. Help
 

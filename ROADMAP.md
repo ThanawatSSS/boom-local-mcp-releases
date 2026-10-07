@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r43 · [English below](#english)
+อัปเดต 2026-10-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r44 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,18 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r44: แอป AI ครบ งานที่ใช้ได้จริงบนเครื่องทั่วไป และใช้หน้าจอเบาลง
+
+จากการใช้งานจริงกับ WorkBuddy (เก้าอี้ใน SketchUp, หอไม้จีนแบบ Three.js สองแบบ และวาดรูปใน Paint):
+- **แอป AI:** Cline และ Freebuff เชื่อมต่อจาก Boom Control ได้แล้ว และแอปอื่น ๆ กด "สร้างการเชื่อมต่อ" ตั้งชื่อ แล้วคัดลอกไปวางในการตั้งค่า MCP ของแอปนั้น แต่ละแอปมีรหัสของตัวเอง
+- **การ์ดงานบอกชื่อแอปที่ทำงานจริง** เช่น "ขั้นที่ WorkBuddy บอกว่าเสร็จ" แทนที่จะเป็น ChatGPT ทุกงาน
+- **Know-how ใหม่:** ความสะอาดและน้ำหนักของโมเดล, โมเดล 3 มิติเป็นหน้าเว็บด้วย Three.js (วาดใหม่เฉพาะตอนมีอะไรเปลี่ยน ตรวจทุกด้านด้วย Chrome ที่ใช้การ์ดจอ), อาคารเครื่องไม้จีนตาม 营造法式 (โครงหลังคาครบทุกด้าน เต้ากงครบทุกมุม ความโค้งหลังคาคำนวณตามกฎ ประตูหมุนบนเดือย) และวาดรูปใน Paint
+- **ทำตามคำสั่งของงาน** และประตูแสดงแบบเปิดค้างไว้บางส่วน
+- **Solid Tools เป็นคำแนะนำ ไม่ใช่ข้อบังคับ:** AI เลือกเครื่องมือของ SketchUp ที่เหมาะกับแต่ละชิ้นเอง
+- **Boom ตรวจโมเดล SketchUp แล้วบอกน้ำหนักด้วย:** จำนวนหน้า สามเหลี่ยม เท็กซ์เจอร์ เงา และเศษเส้นจากการตัด
+- **Boom ตรวจโมเดลบนหน้าเว็บเอง (web_inspect):** ภาพทุกด้านและแบบโปร่ง นับชิ้นส่วนตามชนิดพร้อมตำแหน่ง และภาระตอนไม่ได้ใช้งาน ในครั้งเดียว ไม่ต้องให้ AI เขียนตัวทดสอบเอง
+- **ใช้หน้าจอเบาและแม่นขึ้น:** หลังแต่ละคำสั่ง AI ได้เฉพาะปุ่มที่เปลี่ยน (ใน Paint ข้อมูลเล็กลงประมาณ 97%) คลิกบนพื้นที่วาดรูปได้ผลจริง และค้นปุ่มด้วยชื่อได้
 
 ## ปล่อยแล้วใน r43 (แก้ด่วน): แอป AI เชื่อมต่อได้จริง
 
@@ -102,7 +114,7 @@
 
 ## English
 
-Updated 2026-10-07 · latest release: r43
+Updated 2026-10-07 · latest release: r44
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -124,6 +136,18 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r44: every AI app, work that runs on an ordinary PC, lighter screen work
+
+From real use with WorkBuddy (a chair in SketchUp, two Chinese timber halls in Three.js, and a drawing in Paint):
+- **AI apps:** Cline and Freebuff connect from Boom Control, and any other app gets a named connection to paste into its MCP settings, with its own key.
+- **The task card names the app that did the work**, for example "WorkBuddy reported", instead of ChatGPT for every task.
+- **New know-how:** clean, light models; a 3D model as a Three.js web page (drawn only when something changes, checked from every side with Chrome on the graphics card); Chinese timber halls by the 营造法式 (the frame on every slope, bracket sets at every corner, the roof curve computed by its rule, doors on pivots); and drawing in Paint.
+- **Your brief decides**, and doors are shown partly open.
+- **Solid Tools are a recommendation, not a rule:** the AI picks SketchUp's own tool that fits each part.
+- **Boom's SketchUp check also reports the model's weight:** faces, triangles, textures, shadows and slivers left by cuts.
+- **Boom checks 3D web pages itself (web_inspect):** every side and X-ray, parts counted by type with their positions, and the idle cost, in one call, with no test harness for the AI to write.
+- **Lighter, surer screen work:** after each action the AI gets only the controls that changed (about 97% less in Paint), clicks work on drawing canvases, and controls can be found by name.
 
 ### Released in r43 (patch): AI apps really connect
 
