@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-08 · รุ่นล่าสุดที่ปล่อยแล้ว: r45 · [English below](#english)
+อัปเดต 2026-10-08 · รุ่นล่าสุดที่ปล่อยแล้ว: r46 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,11 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r46 (แก้ด่วนของ r45): อัปเดตไม่ติดแม้ปิดเบราว์เซอร์แล้ว
+
+- **Boom ปิดตัวขับเบราว์เซอร์ (node.exe ของ Playwright) เมื่อปิดเบราว์เซอร์ตัวสุดท้ายที่เปิดให้ AI** เดิมตัวขับยังค้างอยู่หลังปิดเบราว์เซอร์ Boom จึงยังไม่ยอมอัปเดตหรือหยุด เปิดเบราว์เซอร์ครั้งต่อไป Boom เริ่มตัวขับใหม่ให้เอง
+- **ถ้ายังอัปเดตจาก r43–r45 ไม่ได้:** ปิดเบราว์เซอร์ที่ค้างในหน้าภาพรวม แล้วเริ่ม Boom ใหม่ จากนั้นอัปเดตมารุ่นนี้
 
 ## ปล่อยแล้วใน r45 (แก้ด่วนของ r44): อัปเดตไม่ติดเพราะเบราว์เซอร์ที่ค้างไว้
 
@@ -120,7 +125,7 @@
 
 ## English
 
-Updated 2026-10-08 · latest release: r45
+Updated 2026-10-08 · latest release: r46
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -142,6 +147,11 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r46 (patch for r45): updates no longer wait on the browser driver
+
+- **Boom stops the browser driver (Playwright's node.exe) when the last browser it opened for an AI closes.** Before, the driver stayed after the browser closed, so Boom still would not update or stop. The next browser starts it again.
+- **If r43–r45 still cannot update:** close the open browser on the overview, restart Boom, then update to this release.
 
 ### Released in r45 (patch for r44): updates no longer wait on a forgotten browser
 

@@ -12,7 +12,7 @@ Boom lets ChatGPT work on your Windows PC: files, apps, the screen, browsers, Of
    - Boom installs for your Windows account only. It does not need administrator rights.
 3. Boom Control opens and a **B** icon appears in the system tray.
 
-Boom starts with Windows and offers new versions on its **Updates** page. It updates only when you press the button. If it says work is still open, the overview shows what (for example a browser Boom opened for an AI) with a button to close it; Boom also closes such a browser after 15 minutes unused.
+Boom starts with Windows and offers new versions on its **Updates** page. It updates only when you press the button. If it says work is still open, the overview shows what (for example a browser Boom opened for an AI) with a button to close it; Boom also closes such a browser after 15 minutes unused. If a version before r46 still cannot update after that, restart Boom (close and reopen Boom Control, or restart the PC) and try again.
 
 ## 2. Connect to ChatGPT (once)
 
