@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r44 · [English below](#english)
+อัปเดต 2026-10-08 · รุ่นล่าสุดที่ปล่อยแล้ว: r45 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,12 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r45 (แก้ด่วนของ r44): อัปเดตไม่ติดเพราะเบราว์เซอร์ที่ค้างไว้
+
+- **เบราว์เซอร์ที่ Boom เปิดให้ AI แล้วไม่มีใครใช้ Boom ปิดเองเมื่อครบ 15 นาที** เดิมถ้า AI (เช่น WorkBuddy) เปิดแล้วไม่ปิด Boom จะไม่ยอมอัปเดตหรือหยุดไปตลอด
+- **หน้าภาพรวมแสดงเบราว์เซอร์ที่ค้างทุกตัว พร้อมปุ่มปิด** รวมถึงตัวที่ปิดหน้าต่างไปแล้วแต่ Boom ยังไม่ได้ปิดให้เรียบร้อย
+- **ข้อความตอนอัปเดตไม่ได้** บอกว่าดูและปิดงานค้างได้ที่หน้าภาพรวม
 
 ## ปล่อยแล้วใน r44: แอป AI ครบ งานที่ใช้ได้จริงบนเครื่องทั่วไป และใช้หน้าจอเบาลง
 
@@ -114,7 +120,7 @@
 
 ## English
 
-Updated 2026-10-07 · latest release: r44
+Updated 2026-10-08 · latest release: r45
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -136,6 +142,12 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r45 (patch for r44): updates no longer wait on a forgotten browser
+
+- **A browser Boom opened for an AI and nobody uses is closed after 15 minutes.** Before, one an AI (WorkBuddy) opened and never closed kept Boom from updating or stopping for good.
+- **The overview lists every such browser with a Close button**, including one whose window was closed by hand but not yet closed by Boom.
+- **The "could not update" message** says where to see and close the open work.
 
 ### Released in r44: every AI app, work that runs on an ordinary PC, lighter screen work
 
