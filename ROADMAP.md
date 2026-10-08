@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-08 · รุ่นล่าสุดที่ปล่อยแล้ว: r46 · [English below](#english)
+อัปเดต 2026-10-08 · รุ่นล่าสุดที่ปล่อยแล้ว: r47 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,16 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r47: งานที่ส่งมอบต้องใช้ได้จริง
+
+- **เริ่มงานได้เสมอ คำถามที่ยังไม่ได้ตอบขึ้นบนการ์ดงาน** เดิมถ้ายังตอบไม่ครบ Boom ไม่ยอมเริ่มงาน แล้ว AI ก็ทำต่อโดยไม่มีการ์ดและไม่มีการตรวจ ตอนนี้ล็อกเฉพาะการเปิดหรือแก้งานใน SketchUp และ Blender ก่อนได้คำตอบ
+- **ปัญหาที่คุณชี้ระหว่างทำงานติดอยู่บนการ์ดจนกว่าจะแก้** AI จะปิดงานว่า "เสร็จ" ไม่ได้ถ้ายังไม่ได้ตอบทุกข้อ
+- **งานหน้าเว็บ 3 มิติจบได้เมื่อ Boom ตรวจหน้าสุดท้ายเองแล้วสะอาด** AI รายงานเองแทนไม่ได้
+- **ตรวจหน้าเว็บได้ละเอียดขึ้น** ชิ้นที่ไม่มีตำแหน่ง (ไม่ถูกวาด), ชิ้นที่ขนาดผิดกลุ่ม, ชิ้นที่หันผิดทาง, ชิ้นที่ไม่มีชื่อ และทดสอบปุ่มหรือคีย์ได้โดยไม่ยุ่งกับหน้าจอของคุณ
+- **ความรู้ใหม่:** แกนโลก แกนวัตถุ การย้ายและการหมุนใน 3 มิติ และการตรวจความปลอดภัยของซอฟต์แวร์ (นำสกิลของ Cloudflare มาใช้ตามต้นฉบับ ถ้า AI มีสกิลของตัวเองให้ใช้ของตัวเองก่อน)
+- **Computer Use:** การคลิกปุ่มใช้ UI Automation ก่อน ไม่แย่งเมาส์ของคุณ ถ้าต้องใช้เมาส์และคีย์บอร์ดจริงจะขออนุญาตหนึ่งครั้งต่อหนึ่งงานและหนึ่งแอป
+- **Ask first:** เข้าใจคำว่า "ทำเป็นอีกไฟล์" แล้ว และงานต่อเนื่องจะใช้ไฟล์เดิม ไม่เปิดไฟล์ใหม่ทุกครั้ง
 
 ## ปล่อยแล้วใน r46 (แก้ด่วนของ r45): อัปเดตไม่ติดแม้ปิดเบราว์เซอร์แล้ว
 
@@ -125,7 +135,7 @@
 
 ## English
 
-Updated 2026-10-08 · latest release: r46
+Updated 2026-10-08 · latest release: r47
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -147,6 +157,16 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r47: work that is delivered must work
+
+- **Work always starts; open questions go on the task card.** Before, Boom refused to start until every question was answered, and the AI went on without a card or checks. Now only opening or changing SketchUp and Blender waits for the answer.
+- **Problems you point out during the work stay on the card until fixed.** The AI cannot finish as "done" while one is unanswered.
+- **A 3D web page's work finishes only after Boom's own clean look at the final page.** The AI's own report is not enough.
+- **Web pages are checked more closely:** parts with no position (not drawn), parts sized unlike their group, parts facing the wrong way, unnamed parts, and buttons and keys played without touching your screen.
+- **New know-how:** world and local axes, moving and turning in 3D; security audits (Cloudflare's skill as published; an AI with its own skill uses its own first).
+- **Computer Use:** a click on a control goes through UI Automation first and leaves your mouse alone; the real mouse and keyboard are asked for once per task and app.
+- **Ask first:** understands "make it another file", and a follow-up keeps working in the same file.
 
 ### Released in r46 (patch for r45): updates no longer wait on the browser driver
 
