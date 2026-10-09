@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-08 · รุ่นล่าสุดที่ปล่อยแล้ว: r47 · [English below](#english)
+อัปเดต 2026-10-09 · รุ่นล่าสุดที่ปล่อยแล้ว: r48 · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,14 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r48 (แก้ด่วนของ r47): ทำงานเบื้องหลังได้จริง และคำตอบโหลดได้
+
+- **ภาพหน้าจอที่ส่งให้ AI เล็กลงมาก** เดิมทุกครั้งที่ AI ดูหรือกดอะไรบนหน้าจอ Boom ส่งภาพ PNG สูงสุด 900 KB งานยาว ๆ จึงมีภาพหลายสิบ MB ในคำตอบเดียว ChatGPT แสดง "This response couldn't load" หรือไม่ส่งข้อความกลับทั้งที่ทำเสร็จแล้ว ตอนนี้เป็น JPEG ไม่เกินราว 200 KB และหลังกดปุ่มผ่าน UI Automation จะส่งเฉพาะรายการที่เปลี่ยน ไม่ส่งภาพ (ขอภาพได้ถ้าต้องการ)
+- **เบราว์เซอร์ไม่เด้งขึ้นมาบังงานของคุณซ้ำ ๆ** การเปิดแท็บใหม่ในเบราว์เซอร์ของคุณเคยรายงานว่าล้มเหลวทั้งที่เปิดได้ (แถบที่อยู่ซ่อน "www.") AI จึงเปิดซ้ำและเบราว์เซอร์เด้งขึ้นมาทุกครั้ง ตอนนี้หาแท็บเจอ และคืนหน้าต่างที่คุณใช้อยู่กลับมาด้านหน้าทันทีหลังเปิดแท็บ
+- **เครื่องมือคลิกและพิมพ์รุ่นเก่าไม่ใช้เมาส์จริงอีกแล้ว** กดผ่าน UI Automation เท่านั้น ไม่ดึงหน้าต่างขึ้นมา ถ้าต้องใช้เมาส์จริงต้องผ่าน Computer Use ซึ่งขออนุญาตคุณก่อน
+- **ถ้าคำตอบโหลดไม่ขึ้น บอก AI ว่า "สรุป"** AI จะอ่านสิ่งที่ Boom ทำไปแล้วก่อนตอบ ไม่ต้องทำใหม่
+- **หน้าภาพรวมใน Boom Control แสดงโปรแกรมที่ Boom เปิดให้** พร้อมปุ่มแสดงหน้าต่างและปุ่มบังคับปิด (เฉพาะโปรแกรมที่ Boom เปิดเอง)
 
 ## ปล่อยแล้วใน r47: งานที่ส่งมอบต้องใช้ได้จริง
 
@@ -135,7 +143,7 @@
 
 ## English
 
-Updated 2026-10-08 · latest release: r47
+Updated 2026-10-09 · latest release: r48
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -157,6 +165,14 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r48 (patch for r47): background work that stays in the background, replies that load
+
+- **Much smaller screen pictures for the AI.** Before, every look or press on the screen sent a PNG of up to 900 KB, so a long job put tens of MB of pictures into one reply, and ChatGPT showed "This response couldn't load" or sent nothing back after finishing. Now they are JPEG of about 200 KB at most, and a press through UI Automation returns only what changed, without a picture (one can be asked for).
+- **The browser no longer jumps over your work again and again.** Opening a tab in your browser was reported as failed although it opened (the address bar hides "www."), so the AI opened it again and the browser came forward each time. Now the tab is found, and the window you were using comes back to the front right after the tab opens.
+- **The old click and text tools no longer use the real mouse.** They press through UI Automation only and never bring a window forward; the real mouse goes through Computer Use, which asks you first.
+- **If a reply does not load, tell the AI "summarize".** It reads what Boom already did before answering, instead of doing it again.
+- **The overview in Boom Control lists the programs Boom started**, with Show window and Force close (only programs Boom started itself).
 
 ### Released in r47: work that is delivered must work
 
