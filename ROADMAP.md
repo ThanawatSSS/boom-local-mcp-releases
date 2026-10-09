@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-09 · รุ่นล่าสุดที่ปล่อยแล้ว: r48 · [English below](#english)
+อัปเดต 2026-10-10 · รุ่นล่าสุดที่ปล่อยแล้ว: r49 (0.5.5-1) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,20 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r49 (0.5.5-1): AI ทำงานได้เองมากขึ้น ไม่ต้องกดยืนยันซ้ำ ๆ และทำงานเบื้องหลังได้จริง
+
+- **โหมดการอนุมัติ: Automation หรือ Strict** (ตั้งค่า > โหมดการอนุมัติ) ค่าเริ่มต้นเป็น Automation ให้ AI ตัดสินใจเองและทำได้ทันที ไม่ต้องกดยืนยันซ้ำ ๆ ถ้า AI เห็นว่าขั้นไหนเสี่ยง (ย้อนกลับไม่ได้ มีค่าใช้จ่าย หรือส่งถึงคนอื่น) จะขออนุมัติคุณเอง การลบไฟล์ยังขออนุมัติเสมอ ทุกอย่างที่ทำยังบันทึกไว้ในประวัติ ถ้าต้องการให้รอคุณทุกครั้ง เลือก Strict
+- **ปุ่มอนุมัติเป็นสีเขียว** ทั้งบนแถบ overlay และใน Boom Control
+- **AI เห็นหน้าต่างที่มันทำงานอยู่ ไม่ใช่หน้าจอของคุณ** เดิมถ้าหน้าต่างที่ AI ใช้ถูกหน้าต่างของคุณบัง ภาพที่ส่งให้ AI อาจเป็นหน้าจอที่คุณกำลังใช้ ตอนนี้ Boom ไม่ถ่ายหน้าจอของคุณแทนเด็ดขาด หน้าต่างที่ย่อไว้จะถูกเปิดกลับไว้ด้านหลังงานของคุณโดยไม่แย่งหน้าจอ และ AI จะดึงหน้าต่างขึ้นมาก็ต่อเมื่ออยากให้คุณดู พร้อมบอกในแชต
+- **ให้เบราว์เซอร์ทำงานต่อแม้ถูกบังหรือย่อ** (ตั้งค่า) Brave, Chrome และ Edge หยุดวาดหน้าต่างที่ถูกบัง เปิดสวิตช์นี้แล้ว AI ทำงานในเบราว์เซอร์ข้างหลังงานของคุณได้ต่อเนื่อง ตรวจได้ที่ brave://policy
+- **Code mode (เลือกติดตั้งเพิ่ม)** ให้ AI เขียนโปรแกรมที่ใช้เครื่องมือของ Boom หลายขั้นในครั้งเดียว เร็วกว่าและได้ผลครบกว่าทีละคำสั่ง โปรแกรมทำงานในกล่องแยก MXC ของ Microsoft ที่ไม่มีอินเทอร์เน็ตและเข้าถึงไฟล์ได้เฉพาะโฟลเดอร์ที่อนุญาต ติดตั้งได้จากตั้งค่า > Code mode (ดาวน์โหลดประมาณ 12 MB) หรือติ๊กตอนติดตั้ง Boom ไม่ติดตั้งให้ถ้าไม่เลือก Boom ตรวจเครื่องมือเขียนโค้ดที่ขาด (Git, Node.js, Python) และติดตั้งให้เมื่อคุณกด ตอนถอนการติดตั้งเลือกลบได้
+- **งานยาวไม่ค้าง** งานที่ใช้เวลานาน (ตรวจโมเดล ทดสอบ build เรียกแอป) ทำต่อเบื้องหลังเมื่อเกิน 45 วินาที AI รับผลด้วย job_output ไม่ต้องเริ่มใหม่ แม้แชตเลิกรอไปแล้ว
+- **ผลลัพธ์ใหญ่ไม่ทำให้คำตอบโหลดไม่ขึ้น** Boom ส่งส่วนต้นและท้าย พร้อมบรรทัดที่มีข้อผิดพลาดหรือคำเตือนจากส่วนกลาง และเก็บทั้งหมดไว้ให้ AI อ่านต่อ (result_read)
+- **AI เห็นเหตุผลเมื่อคำสั่งไม่สำเร็จเสมอ** และได้รับการเตือนเมื่อเรียกคำสั่งเดิมซ้ำ ๆ
+- **อัปเดต MCP Python SDK เป็น 2.2.0**
+
+ควรรีเฟรชปลั๊กอินใน ChatGPT และ Codex: มีเครื่องมือใหม่ run_code, job_output, job_kill, result_read, ask_user
 
 ## ปล่อยแล้วใน r48 (แก้ด่วนของ r47): ทำงานเบื้องหลังได้จริง และคำตอบโหลดได้
 
@@ -143,7 +157,7 @@
 
 ## English
 
-Updated 2026-10-09 · latest release: r48
+Updated 2026-10-10 · latest release: r49 (0.5.5-1)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -165,6 +179,20 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r49 (0.5.5-1): the AI works on its own, without repeated confirmations, and really works in the background
+
+- **Approval modes: Automation or Strict** (Settings). Automation, the default, lets the AI decide and act without repeated confirmations. It asks you itself before a step it judges risky (hard to undo, costly, or sent to other people). Deleting files always asks, and everything is still recorded. Choose Strict to approve each action.
+- **Green approve buttons**, on the overlay and in Boom Control.
+- **The AI sees the window it works in, never your screen.** A covered window is never pictured from your screen. A minimized window comes back behind your work without taking the front. The AI brings a window forward only when it wants you to look, and says so.
+- **Browsers keep working when covered or minimized** (Settings switch, Brave, Chrome, Edge; check brave://policy).
+- **Code mode (optional)**: the AI writes one program that calls many Boom tools, in Microsoft's MXC sandbox (no network, only allowed folders). Install it from Settings (about 12 MB) or in Setup. Boom lists missing coding tools (Git, Node.js, Python) and installs them when you click. Uninstall can remove them.
+- **Long work goes on in the background** past 45 s (job_output), even if the chat stopped waiting.
+- **Big results** keep their start, end, errors and warnings in view; the rest is kept for result_read.
+- **The AI always sees why a call failed**, and is reminded when it repeats the same call.
+- **MCP Python SDK 2.2.0.**
+
+Refresh the plugin in ChatGPT and Codex: new tools run_code, job_output, job_kill, result_read, ask_user.
 
 ### Released in r48 (patch for r47): background work that stays in the background, replies that load
 
