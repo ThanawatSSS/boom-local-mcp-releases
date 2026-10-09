@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-10 · รุ่นล่าสุดที่ปล่อยแล้ว: r49 (0.5.5-1) · [English below](#english)
+อัปเดต 2026-10-10 · รุ่นล่าสุดที่ปล่อยแล้ว: r50 (0.5.5-2) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,15 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r50 (0.5.5-2): AI ใช้ Boom ได้เต็มความสามารถขึ้นใน ChatGPT, Codex และ Claude
+
+- **ChatGPT อ่านผลลัพธ์ครั้งเดียว ไม่ซ้ำสองรอบ** ChatGPT อ่านทั้ง content และ structuredContent ผลของการดูหน้าจอจึงถูกอ่านซ้ำ ประมาณ 15,000 ตัวอักษรต่อครั้ง ตอนนี้ส่งชุดเดียว งานหน้าจอยาว ๆ เร็วขึ้น และคำตอบโหลดขึ้นง่ายขึ้น
+- **คำแนะนำของ Boom อ่านได้ครบใน Claude Code** Claude Code ตัดคำแนะนำของเซิร์ฟเวอร์ที่ 2,048 ตัวอักษร ของเดิมยาว 3,006 กฎใหม่ (โหมดการอนุมัติ งานเบื้องหลัง run_code) จึงหายไป ตอนนี้เหลือ 1,857 ตัวอักษร และเรื่องสำคัญอยู่ช่วงต้นตามคำแนะนำของ OpenAI
+- **ผลลัพธ์ใหญ่ไม่ถูก Codex ตัดทิ้ง** Codex ตัดผลลัพธ์ที่เกินประมาณ 10,000 token โดยอ่านส่วนที่เหลือไม่ได้ Boom จึงนับเป็น token (ข้อความภาษาไทยใช้ token มากกว่า) และบอก result_id ไว้บรรทัดแรก ให้ AI อ่านส่วนที่เหลือได้เสมอ
+- **คำอธิบายเครื่องมือตรงกับโหมดการอนุมัติ** เดิมบอก AI ว่ากดส่งหรือยืนยันไม่ได้ ต้องขออนุมัติทุกครั้ง ตอนนี้บอกว่าโหมด Automation ทำได้เลย และขออนุมัติเมื่อเห็นว่าเสี่ยง
+- **รายการเครื่องมือสั้นและชัดขึ้น** ซ่อนเครื่องมือรุ่นเก่า 9 ตัวที่ Computer Use ทำแทนได้ครบ (input_*, accessibility_tree, accessibility_set_text, window_list, window_activate)
+- **ไฟล์ทดสอบ 3 งานสำหรับเทียบ ChatGPT, Codex และ Claude** อยู่ใน docs/testing/AI_TEST_PROMPTS.md
 
 ## ปล่อยแล้วใน r49 (0.5.5-1): AI ทำงานได้เองมากขึ้น ไม่ต้องกดยืนยันซ้ำ ๆ และทำงานเบื้องหลังได้จริง
 
@@ -157,7 +166,7 @@
 
 ## English
 
-Updated 2026-10-10 · latest release: r49 (0.5.5-1)
+Updated 2026-10-10 · latest release: r50 (0.5.5-2)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -179,6 +188,15 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r50 (0.5.5-2): the AI gets more out of Boom in ChatGPT, Codex and Claude
+
+- **ChatGPT reads each result once.** ChatGPT reads content and structuredContent both, so screen results were read twice (about 15,000 characters each). Now one copy goes to ChatGPT and Codex.
+- **Claude Code reads all of Boom's instructions.** It cuts server instructions at 2,048 characters; Boom's were 3,006, so the newest rules were lost. Now 1,857, key rules first (OpenAI's guidance too).
+- **Big results are no longer silently cut by Codex.** Codex cuts tool output over about 10,000 tokens. Boom's budget is now in tokens (Thai text costs more), and the result_id is on the first line.
+- **Tool descriptions match the approval mode.** They no longer tell the AI that Send or Confirm always needs approval.
+- **A shorter, clearer tool list**: 9 old tools replaced by Computer Use are hidden from the AI.
+- **Three test prompts to compare ChatGPT, Codex and Claude**: docs/testing/AI_TEST_PROMPTS.md.
 
 ### Released in r49 (0.5.5-1): the AI works on its own, without repeated confirmations, and really works in the background
 
