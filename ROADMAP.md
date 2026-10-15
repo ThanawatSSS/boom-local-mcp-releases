@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-10 · รุ่นล่าสุดที่ปล่อยแล้ว: r50 (0.5.5-2) · [English below](#english)
+อัปเดต 2026-10-16 · รุ่นล่าสุดที่ปล่อยแล้ว: r51 (0.5.5-3) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,18 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r51 (0.5.5-3): Boom ไม่ตายหลังใช้งาน และ AI ทำงานกับไฟล์และงานยาวได้ดีขึ้น
+
+- **แก้ Boom ตายหลังใช้งาน** ตอนว่าง Boom หยุดตอบสัญญาณสุขภาพ ตัวคุมจึงหยุดมันเพื่อเริ่มใหม่ แต่ Boom ปิดตัวช้ากว่าเวลาที่รอ จึงค้างสถานะ FAILED จนต้องกด Stop เอง ตอนนี้ตัวคุมยืนยันเองเมื่อ Boom ปิดเสร็จ แล้วเริ่มใหม่ให้อัตโนมัติ (ไม่ฆ่าโปรแกรมกลางคัน) งานตัดผลลัพธ์ใหญ่ย้ายออกจากเส้นทางหลักของ Boom และถ้าค้างอีก Boom จะบันทึกว่าค้างที่โค้ดตรงไหน
+- **อ่านก่อนแก้:** AI เขียนทับไฟล์ที่มีอยู่ได้ต่อเมื่ออ่านไฟล์นั้นในแชตนี้แล้ว และไฟล์ไม่ถูกแก้หลังจากนั้น งานที่คุณแก้เองจึงไม่ถูกทับโดยไม่รู้ตัว
+- **อะไรเปลี่ยนบ้าง:** ทุกงานมีรายการไฟล์ที่ Boom แก้ พร้อมจำนวนบรรทัดที่เพิ่มและลบ การ์ดงานแสดง เช่น "(+12 −3)" และใน Boom Control > งาน ดู diff ได้
+- **งานยาวเกิน 90 วินาทีทำจนจบ:** ตรวจโมเดล build ทดสอบ หรือเรนเดอร์ ทำต่อเบื้องหลังได้ถึง 10 นาที job_kill หยุดได้ทันที รวมถึงการเรียกแอปผ่าน MCP
+- **เทอร์มินัลที่จำสถานะ (ต้องติดตั้ง Code mode):** PowerShell ที่จำโฟลเดอร์และตัวแปรระหว่างคำสั่ง ทำงานในกล่องแยก MXC เขียนได้เฉพาะโฟลเดอร์งาน ไม่มีอินเทอร์เน็ต และปิดเองเมื่อว่าง 15 นาทีหรือก่อน Boom อัปเดต
+- **ค้นงานเก่าข้ามแชตและแอป:** earlier_work หางานจาก ChatGPT, Codex หรือ Claude ด้วยคำหรือโฟลเดอร์ บอกว่าหยุดที่ขั้นไหนและแก้ไฟล์อะไรไป
+- **mcp_tools ของแอปที่มีเครื่องมือเยอะ** ส่งชื่อและคำอธิบายสั้น ขอรายละเอียดทีละตัวได้
+
+ควรรีเฟรชปลั๊กอินใน ChatGPT และ Codex: มีเครื่องมือใหม่ task_changes, terminal_run, terminal_close, earlier_work
 
 ## ปล่อยแล้วใน r50 (0.5.5-2): AI ใช้ Boom ได้เต็มความสามารถขึ้นใน ChatGPT, Codex และ Claude
 
@@ -142,10 +154,9 @@
 ## กำลังทำต่อ: AI ตัวอื่นใช้ Boom ได้ และ DeepSeek Harness
 
 **v0.6.0 (Major update): ความสามารถของ DeepSeek Harness สร้างใหม่ใน Boom ใช้โมเดลเดียว**
-1. **Code mode:** AI เขียนโปรแกรมเดียวที่เรียกเครื่องมือหลายตัว แทนการเรียกทีละครั้งหลายสิบรอบ
-2. **งานเบื้องหลัง:** งานยาวไม่ติดเพดานเวลาของการเรียก ดูความคืบหน้าและรอได้
-3. **กันวนซ้ำ และผลลัพธ์ใหญ่:** เตือนเมื่อเรียกเหมือนเดิมซ้ำ ผลยาวเก็บเป็นไฟล์ให้อ่านต่อ
-4. ต่อจากนั้น: อ่านก่อนแก้ไฟล์, สรุปไฟล์ที่งานเปลี่ยน, Terminal ที่จำกัดการเขียน, ค้นงานเก่า และโหมด API สำหรับผู้ที่ใส่ API key เอง
+1. **Code mode, งานเบื้องหลัง, กันวนซ้ำ และผลลัพธ์ใหญ่:** ปล่อยแล้วใน r49
+2. **อ่านก่อนแก้ไฟล์, สรุปไฟล์ที่งานเปลี่ยน, Terminal ที่จำกัดการเขียน และค้นงานเก่า:** ปล่อยแล้วใน r51
+3. ต่อไป: ค้นโค้ดตามโครงสร้าง (หาฟังก์ชันและจุดที่เรียกใช้ เป็นแพ็กเกจเลือกติดตั้งเพิ่ม) และโหมด API สำหรับผู้ที่ใส่ API key เอง
 
 ทดสอบด้วย ChatGPT, Codex, Claude และ WorkBuddy บนงานเดียวกัน ก่อนและหลัง
 
@@ -154,8 +165,7 @@
 1. **Know-how ด้านศิลปะ:** วาด Anime, ขาวดำ, สีน้ำ, ลงสี, Illustration และ Line art
 2. **Know-how ด้านเขียนโปรแกรม QA และออกแบบ:** วางไว้ในขั้นตอนการทำงานของ AI ให้หาจุดปัญหาจริงก่อน แล้วเลือก ออกแบบ และแก้ได้ถูก
 3. **เขียนโค้ดด้วยโมเดลเดียว:** ใช้ ChatGPT ตัวที่คุยอยู่ทำงานเองผ่าน Boom ไม่ต้องจ่ายโมเดลที่สอง และลดจำนวนรอบด้วยเครื่องมือที่ทำหลายขั้นในครั้งเดียว
-4. **Terminal:** หน้าต่างคำสั่งที่ AI ใช้ต่อเนื่องได้ คำสั่งที่มีผลจริงต้องอนุมัติ
-5. **AI ตัวอื่นอีก:** Grok หรือ Local LLM ต่อพร้อมกันได้หลายตัว และทุกบันทึกบอกว่า AI ตัวไหนสั่ง
+4. **AI ตัวอื่นอีก:** Grok หรือ Local LLM ต่อพร้อมกันได้หลายตัว และทุกบันทึกบอกว่า AI ตัวไหนสั่ง
 6. **AI ช่วยกันในเครื่อง:** ให้ AI ปรึกษา ตรวจงาน และส่งงานต่อกันในเครื่อง (เช่น GPT วางแผน Claude ตรวจ Gemini ลงมือ) ผ่านโปรแกรมของแต่ละเจ้าที่ใช้บัญชีเดิมของคุณ
 
 ## ก่อนปล่อย v0.5.0
@@ -166,7 +176,7 @@
 
 ## English
 
-Updated 2026-10-10 · latest release: r50 (0.5.5-2)
+Updated 2026-10-16 · latest release: r51 (0.5.5-3)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -188,6 +198,18 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r51 (0.5.5-3): Boom no longer dies after use, and the AI works better with files and long jobs
+
+- **Fixed: Boom died after use.** While idle, Boom stopped answering health checks; the supervisor retired it, the exit came after the wait, and Boom stayed FAILED until a manual Stop. Now the supervisor confirms the late exit itself and restarts Boom (never a kill). Cutting big results moved off Boom's main loop, and a stall now records where in the code it happened.
+- **Read before edit:** the AI replaces an existing file only after reading it in this chat, and only if it has not changed since.
+- **What changed:** every task lists the files Boom changed with lines added and removed; the card shows "(+12 -3)"; Boom Control's task page shows the diff.
+- **Long work runs to the end:** inspections, builds, tests and renders continue past 90 s as background jobs (up to 10 minutes); job_kill stops them, app MCP calls included.
+- **A terminal that keeps its state (needs Code mode):** PowerShell that remembers its folder and variables, in the MXC sandbox: workspace only, no network; it closes after 15 idle minutes or before an update.
+- **Earlier work across chats and apps:** earlier_work finds tasks from ChatGPT, Codex or Claude by words or folder, with where they stopped and the files changed.
+- **mcp_tools** lists a long tool set as names and short descriptions, with one tool in full on request.
+
+Refresh the plugin in ChatGPT and Codex: new tools task_changes, terminal_run, terminal_close, earlier_work.
 
 ### Released in r50 (0.5.5-2): the AI gets more out of Boom in ChatGPT, Codex and Claude
 
@@ -314,10 +336,9 @@ From real use with WorkBuddy (a chair in SketchUp, two Chinese timber halls in T
 ### Now: more AI apps on Boom, and the DeepSeek Harness
 
 **v0.6.0 (major update): DeepSeek Harness capabilities rebuilt in Boom, one model**
-1. **Code mode:** the AI writes one program that calls many tools, instead of dozens of separate calls.
-2. **Background jobs:** long work is not cut off by a call's time limit; you can follow it and wait for it.
-3. **Loop guard and big results:** a reminder when the same call repeats, and long output kept as a file to read on.
-4. After that: read before editing a file, what each task changed, a confined terminal, searching earlier work, and an API mode for those who give their own key.
+1. **Code mode, background jobs, the loop guard and big results:** released in r49.
+2. **Read before editing, what each task changed, a confined terminal and searching earlier work:** released in r51.
+3. Next: code navigation by structure (find a function and where it is used; an optional package) and an API mode for those who give their own key.
 
 Tested on ChatGPT, Codex, Claude and WorkBuddy with the same work, before and after.
 
@@ -326,8 +347,7 @@ Tested on ChatGPT, Codex, Claude and WorkBuddy with the same work, before and af
 1. **Know-how for art:** anime, black and white, watercolour, colour, illustration and line art.
 2. **Know-how for coding, QA and design:** built into the AI's workflow, so it finds the real problem first, then chooses, designs and fixes correctly.
 3. **Coding with one model:** the ChatGPT you are chatting with does the work through Boom, with no second model to pay for. Tools that do several steps in one call cut the round-trips.
-4. **Terminal:** a persistent terminal for the AI; consequential commands need approval.
-5. **Still more AI apps:** Grok or a local LLM. Several can be connected at once, and every record says which AI asked.
+4. **Still more AI apps:** Grok or a local LLM. Several can be connected at once, and every record says which AI asked.
 6. **AIs working together on your PC:** AIs consult, review and hand work to each other (for example, GPT plans, Claude reviews and Gemini executes) through each vendor's own app on your existing account.
 
 ### Before v0.5.0
