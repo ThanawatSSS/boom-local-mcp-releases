@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-16 · รุ่นล่าสุดที่ปล่อยแล้ว: r51 (0.5.5-3) · [English below](#english)
+อัปเดต 2026-10-18 · รุ่นล่าสุดที่ปล่อยแล้ว: r53 (0.5.5-5) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,15 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r53 (0.5.5-5, รวม r52): โมเดล 3D ที่ชิ้นส่วนสมเหตุสมผล และ know-how ไม่บังคับ
+
+- **know-how เป็นตัวเลือก (r52):** AI ใช้วิธีของตัวเองก่อน หยิบ know-how เฉพาะที่ช่วยได้ ไม่มีขั้นตอนไหนรอ "ถามก่อน" และเทียบภาพต้นแบบด้วยการซ้อนเส้นรอบรูปจากมุมกล้องของภาพ
+- **blender_inspect ตรวจการสัมผัส:** ชิ้นที่ลอย ทะลุกัน ซ่อนอยู่ข้างใน และหมุดที่ไม่ได้ยึดสองชิ้น งาน Blender จบได้เมื่อ Boom ตรวจไฟล์สุดท้ายแล้วไม่พบปัญหา
+- **reference_match:** เทียบโมเดลกับภาพต้นแบบจากมุมกล้องของภาพ ให้คะแนนเส้นรอบรูป แพทเทิร์นมืด/สว่าง และเส้นขอบแยกกัน
+- **ประกอบชิ้นส่วนจริง:** ชุดคำสั่ง bpy seat, rivet_join, joint, body_proxy, drape (จำลองผ้า) และ know-how ใหม่เรื่องเกราะและของสวมใส่
+
+ควรรีเฟรชปลั๊กอินใน ChatGPT, Codex และ Claude: มีเครื่องมือใหม่ reference_match
 
 ## ปล่อยแล้วใน r51 (0.5.5-3): Boom ไม่ตายหลังใช้งาน และ AI ทำงานกับไฟล์และงานยาวได้ดีขึ้น
 
@@ -176,7 +185,7 @@
 
 ## English
 
-Updated 2026-10-16 · latest release: r51 (0.5.5-3)
+Updated 2026-10-18 · latest release: r53 (0.5.5-5)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -198,6 +207,15 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r53 (0.5.5-5, includes r52): 3D parts that make sense, and know-how is optional
+
+- **Know-how is optional (r52):** the AI's own method comes first and it takes only the know-how that helps; nothing waits for "Ask first"; a reference is judged by outline overlap from the picture's own camera.
+- **blender_inspect checks contacts:** floating parts, parts through each other, hidden parts and rivets that hold nothing. A Blender model finishes only after Boom finds no contact problem in the final file.
+- **reference_match:** compares the model with reference pictures from their camera, scoring outline, dark/bright pattern and edges separately.
+- **Real assembly:** bpy kit helpers seat, rivet_join, joint, body_proxy, drape (cloth simulation), and new know-how on armour and wearables.
+
+Refresh the plugin in ChatGPT, Codex and Claude: new tool reference_match.
 
 ### Released in r51 (0.5.5-3): Boom no longer dies after use, and the AI works better with files and long jobs
 
