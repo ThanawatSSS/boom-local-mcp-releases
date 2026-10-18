@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-18 · รุ่นล่าสุดที่ปล่อยแล้ว: r53 (0.5.5-5) · [English below](#english)
+อัปเดต 2026-10-19 · รุ่นล่าสุดที่ปล่อยแล้ว: r54 (0.5.5-6) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,16 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r54 (0.5.5-6): เข้าใจงานก่อนลงมือ และขึ้นรูปจากภาพต้นแบบ
+
+- **เข้าใจงาน (ทุกงาน):** know-how ใหม่ให้ AI ตั้งคำถามและศึกษางานก่อนลงมือ: ถูกขออะไร ของคืออะไร มีชิ้นอะไรทำหน้าที่อะไร อะไรยึดอะไร รายละเอียดไหนต้องถูก อะไรซ้ำ อะไรต่าง
+- **reference_hull:** ขึ้นรูปทรงจากภาพต้นแบบหลายมุม และหามุมกล้องให้เอง
+- **reference_match ตรวจมุมแหลม** และให้คะแนนแยกตามบริเวณ
+- **ชุดคำสั่ง bpy:** loft เก็บมุม, extract_faces ทำขอบและลายจากหน้าของทรงหลัก, pivot ให้ชิ้นที่ขยับได้หมุนบนแกนจริง, mirror เฉพาะชิ้นที่สมมาตร
+- **know-how เกราะ** อ่านเกราะได้หลายแบบ และเพิ่มแกนหมุน visor
+
+ควรรีเฟรชปลั๊กอินใน ChatGPT, Codex และ Claude: มีเครื่องมือใหม่ reference_hull
 
 ## ปล่อยแล้วใน r53 (0.5.5-5, รวม r52): โมเดล 3D ที่ชิ้นส่วนสมเหตุสมผล และ know-how ไม่บังคับ
 
@@ -185,7 +195,7 @@
 
 ## English
 
-Updated 2026-10-18 · latest release: r53 (0.5.5-5)
+Updated 2026-10-19 · latest release: r54 (0.5.5-6)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -207,6 +217,16 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r54 (0.5.5-6): understand the work first, and build the form from the reference pictures
+
+- **Understanding the work (any task):** new know-how for the AI to ask and study what is asked, what the thing is, its parts and their jobs, what holds and moves, which details must be right, and what repeats or differs.
+- **reference_hull:** the shape the reference pictures allow, with the camera solved.
+- **reference_match checks corners** and scores regions separately.
+- **bpy kit:** loft keeps corners, extract_faces makes trims and filigree from the host's faces, pivot hangs moving parts on a real pivot, mirror only for symmetric parts.
+- **Armour know-how** reads any kind of armour, with visor pivots.
+
+Refresh the plugin in ChatGPT, Codex and Claude: new tool reference_hull.
 
 ### Released in r53 (0.5.5-5, includes r52): 3D parts that make sense, and know-how is optional
 
