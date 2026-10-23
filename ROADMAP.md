@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-19 · รุ่นล่าสุดที่ปล่อยแล้ว: r54 (0.5.5-6) · [English below](#english)
+อัปเดต 2026-10-24 · รุ่นล่าสุดที่ปล่อยแล้ว: r55 (0.5.5-7) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,14 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r55 (0.5.5-7): Boom ไม่ตายง่าย ใช้ได้แม้ไม่มี ChatGPT, หน้า Skill และตรวจอัปเดต MCP
+
+- **Boom อยู่รอดดีขึ้น:** ไม่ตายเมื่อตรวจสุขภาพสะดุด ใช้ได้แม้ tunnel หลุดหรือไม่ได้ต่อ ChatGPT แอปที่ต่อไว้ต่อกลับเองเมื่อ Boom เริ่มใหม่ และหาไฟล์ตั้งค่าของ Claude Desktop รุ่นใหม่เจอ
+- **หน้า Skill:** เปิด/ปิด บังคับอ่าน ("เข้าใจงานก่อนลงมือ" อยู่บนสุด) AI เพิ่มหรือแก้ Skill ได้เอง (knowhow_write) และมีปุ่มสำรอง ส่งออก นำเข้า
+- **MCP ของแอป:** แสดงรุ่น ตรวจอัปเดต (npm, PyPI, git, GitHub release) และแจ้งเตือน AI รายงานรุ่นได้ (mcp_update_done) แยกส่วนที่ต้องอัปเดตออกจากประวัติ
+
+ควรรีเฟรชปลั๊กอินใน ChatGPT, Codex และ Claude: มีเครื่องมือใหม่ knowhow_write และ mcp_update_done
 
 ## ปล่อยแล้วใน r54 (0.5.5-6): เข้าใจงานก่อนลงมือ และขึ้นรูปจากภาพต้นแบบ
 
@@ -195,7 +203,7 @@
 
 ## English
 
-Updated 2026-10-19 · latest release: r54 (0.5.5-6)
+Updated 2026-10-24 · latest release: r55 (0.5.5-7)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -217,6 +225,14 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r55 (0.5.5-7): Boom stays up, works without ChatGPT, a Skill page and MCP update checks
+
+- **Boom stays up:** a stumbling health probe no longer kills it; it keeps serving local apps when the tunnel drops or without ChatGPT; app connectors reconnect when Boom restarts; the new Claude Desktop config is found.
+- **Skill page:** on/off and must-reads (understanding the work first); the AI adds or changes Skills (knowhow_write); Backup, Export and Import.
+- **Apps' MCP servers:** versions shown; update checks (npm, PyPI, git, GitHub releases) with notifications; the AI reports versions (mcp_update_done); what needs an update is apart from the history.
+
+Refresh the plugin in ChatGPT, Codex and Claude: new tools knowhow_write and mcp_update_done.
 
 ### Released in r54 (0.5.5-6): understand the work first, and build the form from the reference pictures
 
