@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-24 · รุ่นล่าสุดที่ปล่อยแล้ว: r55 (0.5.5-7) · [English below](#english)
+อัปเดต 2026-10-24 · รุ่นล่าสุดที่ปล่อยแล้ว: r56 (0.5.5-8) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,11 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r56 (0.5.5-8): ทุก MCP เท่ากันหมด รวม SketchUp
+
+- **SketchUp ไม่ได้ฝังอยู่ใน Boom แล้ว:** MCP ของ SketchUp มากับ Boom เป็นรายการตั้งต้น ปิด ลบ เปลี่ยน หรือเพิ่มกลับได้เหมือน MCP ตัวอื่น (แนวเดียวกับ DeepSeek Harness)
+- **อัปเดตไม่ล้มเพราะแอป AI เปิดค้าง:** ตัวติดตั้งย้ายตัวเชื่อมที่แอปเปิดค้างไว้ออกข้าง แล้ววางตัวใหม่แทน
 
 ## ปล่อยแล้วใน r55 (0.5.5-7): Boom ไม่ตายง่าย ใช้ได้แม้ไม่มี ChatGPT, หน้า Skill และตรวจอัปเดต MCP
 
@@ -203,7 +208,7 @@
 
 ## English
 
-Updated 2026-10-24 · latest release: r55 (0.5.5-7)
+Updated 2026-10-24 · latest release: r56 (0.5.5-8)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -225,6 +230,11 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r56 (0.5.5-8): every MCP is equal, SketchUp included
+
+- **SketchUp is no longer native to Boom:** its MCP ships with Boom as a preset you can turn off, remove, replace or add again, like any other server (as in DeepSeek Harness).
+- **Updates no longer fail because an AI app is open:** setup renames the connector an app holds aside and puts the new one in place.
 
 ### Released in r55 (0.5.5-7): Boom stays up, works without ChatGPT, a Skill page and MCP update checks
 
