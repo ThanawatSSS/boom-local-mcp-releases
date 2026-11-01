@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-10-24 · รุ่นล่าสุดที่ปล่อยแล้ว: r56 (0.5.5-8) · [English below](#english)
+อัปเดต 2026-11-01 · รุ่นล่าสุดที่ปล่อยแล้ว: r57 (0.5.5-9) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,14 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r57 (0.5.5-9): AI ใช้ความสามารถของ Boom เองโดยไม่ต้องสั่ง
+
+- **Boom note:** คำตอบแรกของ Boom ในแต่ละแชตมี Skill ที่บังคับอ่าน, Know-how ที่ตรงกับงาน และบอกให้เปิดการ์ดงานสำหรับงานหลายขั้นตอน ไม่มีอะไรรอหรือถูกบล็อก
+- **SketchUp ผ่าน Boom ใช้ได้อีกครั้ง** (r56 ขาด win32ui) และ Code mode บอกเหตุผลทันทีแทนการล้มเงียบ
+- **ตัวเชื่อมของแอปที่ถูกปฏิเสธ** รอ 30 วินาทีระหว่างลองใหม่และบอกแอปว่าทำไม
+
+ควรรีเฟรชปลั๊กอินใน ChatGPT และ Codex และเปิด Claude Desktop ใหม่
 
 ## ปล่อยแล้วใน r56 (0.5.5-8): ทุก MCP เท่ากันหมด รวม SketchUp
 
@@ -208,7 +216,7 @@
 
 ## English
 
-Updated 2026-10-24 · latest release: r56 (0.5.5-8)
+Updated 2026-11-01 · latest release: r57 (0.5.5-9)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -230,6 +238,14 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r57 (0.5.5-9): the AI uses Boom without being told
+
+- **Boom note:** Boom's first answer in each chat carries your must-read Skills, the know-how matching the work, and a line on opening a task card for multi-step work. Nothing waits or is blocked.
+- **SketchUp through Boom works again** (r56 left out win32ui), and code mode says why at once instead of failing silently.
+- **A refused app connector** waits 30 seconds between tries and tells the app why.
+
+Refresh the plugin in ChatGPT and Codex, and reopen Claude Desktop.
 
 ### Released in r56 (0.5.5-8): every MCP is equal, SketchUp included
 
