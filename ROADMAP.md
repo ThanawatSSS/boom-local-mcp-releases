@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-11-01 · รุ่นล่าสุดที่ปล่อยแล้ว: r57 (0.5.5-9) · [English below](#english)
+อัปเดต 2026-11-03 · รุ่นล่าสุดที่ปล่อยแล้ว: r59 (0.5.5-11) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,17 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r59 (0.5.5-11): คำอธิบายใหม่ทั้งหมด, Code mode ใช้ได้จริง และอัปเดตไม่ล้มกลางทาง
+
+r59 รวมทุกอย่างของ r58 ซึ่งไม่ได้เผยแพร่แยก
+
+- **ข้อความที่ AI อ่านจาก Boom เขียนใหม่ทั้งหมด:** ส่วนสำคัญของคำแนะนำอยู่ใน 512 ตัวอักษรแรก คำอธิบายเครื่องมือ 150 ตัวเขียนใหม่ และ Boom note แนะนำ know-how ของแอปที่ใช้อยู่ได้จริง
+- **Code mode ใช้ได้บน Boom ที่ติดตั้ง:** run_code รันบน Python ที่มากับ Boom ใน sandbox ไม่ต้องมี python.exe ในเครื่อง
+- **อัปเดตไม่ล้มกลางทาง:** ถ้าตัวทำงานของ Boom ปิดตัวช้า ตัวติดตั้งรอต่อได้อีกถึง 60 วินาทีแล้วอัปเดตต่อเอง ไม่ต้องรันใหม่ และไม่บังคับปิดอะไร
+- **ความปลอดภัย:** แอปที่เชื่อมผ่านตัวเชื่อมในเครื่องใช้ชื่อตามการเชื่อมต่อจริงของมันเสมอ
+
+ควรรีเฟรชปลั๊กอินใน ChatGPT และ Codex และเปิด Claude Desktop ใหม่
 
 ## ปล่อยแล้วใน r57 (0.5.5-9): AI ใช้ความสามารถของ Boom เองโดยไม่ต้องสั่ง
 
@@ -216,7 +227,7 @@
 
 ## English
 
-Updated 2026-11-01 · latest release: r57 (0.5.5-9)
+Updated 2026-11-03 · latest release: r59 (0.5.5-11)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -238,6 +249,17 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r59 (0.5.5-11): every guidance text rewritten, code mode works, and updates no longer stop halfway
+
+r59 carries everything in r58, which was not published on its own.
+
+- **Everything the AI reads from Boom, rewritten:** what matters in the instructions comes in the first 512 characters, all 150 tool descriptions are rewritten, and the Boom note names the know-how for the app in use.
+- **Code mode works on the installed Boom:** run_code runs on the Python packed with Boom, in its sandbox, with no python.exe on the PC.
+- **Updates no longer stop halfway:** when Boom's worker is slow to exit, setup waits up to 60 more seconds and carries on, with no second run and nothing forced closed.
+- **Safety:** an app on the local connector is always named by its own connection.
+
+Refresh the plugin in ChatGPT and Codex, and reopen Claude Desktop.
 
 ### Released in r57 (0.5.5-9): the AI uses Boom without being told
 
