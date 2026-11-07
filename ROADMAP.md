@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-11-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r60 (0.6.0-1) · [English below](#english)
+อัปเดต 2026-11-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r61 (0.6.0-2) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,11 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r61 (0.6.0-2): รองรับปลั๊กอิน SketchUp 0.4.0+ อัตโนมัติ และซ่อมไฟล์ที่ถูกแก้ไขก่อนอัปเดตได้
+
+- **SketchUp 0.4.0+ ใช้งานได้เลยโดยไม่ต้องแก้ไฟล์เอง:** Boom อ่านเลขรุ่นจากปลั๊กอิน SketchUp ที่ติดตั้งอยู่ในเครื่องโดยตรง และยังต่อกับปลั๊กอินรุ่น `0.3.1` เดิมได้อัตโนมัติ
+- **อัปเดตไม่ติดค้างเมื่อไฟล์ในโฟลเดอร์ติดตั้งเคยถูกแก้:** ถ้าตรวจพบไฟล์ในโปรแกรมที่ติดตั้งไม่ตรงกับรายการเดิม Boom จะบอกชื่อไฟล์ที่เปลี่ยน สำรองไฟล์นั้นเก็บไว้ และให้คุณกดยืนยันซ่อมแล้วอัปเดตต่อได้ทันที โดยยังตรวจลายเซ็นและไฟล์ของชุดอัปเดตครบทุกไฟล์เหมือนเดิม
 
 ## ปล่อยแล้วใน r60 (0.6.0-1): ตรวจงานเทียบกับแบบ และตอบการ์ดอนุมัติด้วยคีย์บอร์ด
 
@@ -237,7 +242,7 @@ r59 รวมทุกอย่างของ r58 ซึ่งไม่ได�
 
 ## English
 
-Updated 2026-11-07 · latest release: r60 (0.6.0-1)
+Updated 2026-11-07 · latest release: r61 (0.6.0-2)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -259,6 +264,11 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r61 (0.6.0-2): SketchUp 0.4.0+ out of the box, and confirmed repair updates
+
+- **SketchUp 0.4.0+ without manual edits:** Boom reads the installed SketchUp extension's version directly for its handshake and still falls back cleanly for `0.3.1`.
+- **Updates recover cleanly when an installed file was modified:** when an installed file differs from its recorded inventory, Boom names the modified file, backs it up under `repaired-from/`, and lets you confirm a repair update while still verifying every signature and file in the new release.
 
 ### Released in r60 (0.6.0-1): check work against its reference, and answer the approval card with keys
 
