@@ -49,6 +49,7 @@ Tips: say the result you want and let GPT choose how. Add `send a screenshot of 
 - Consequential actions show an **approval card** in the chat and in Boom Control on the PC; decide in either place, once.
 - Can't see the card on your phone? Type `I can't see the approval card` and GPT shows the same card again.
 - Several requests: the card says how many more wait; decide this one and press **Next request**.
+- While Boom uses the screen, press **Enter to approve** or **Esc to deny**, with no mouse. A red card needs Enter held down, and an Enter you are typing into another app does not approve. A key the AI sends does not count.
 - While approvals wait, the Boom tray icon shows a red number and blinks when a new one arrives.
 
 ## 5. While Boom uses the screen
@@ -75,6 +76,7 @@ Boom gives every AI the same **craft know-how**, so results are things you can u
 - **Boom checks SketchUp models itself:** on a copy, in its own SketchUp window for about half a minute. It finds parts that overlap (a missing hole), parts that touch nothing, fasteners that hold nothing, and takes the cut list from the model. Buildable work is not marked done until Boom's check of the final file is clean.
 - **Each object is one group,** and repeated parts share one definition.
 - **From a plan or a layout picture:** give a PDF floor plan or a picture of a layout (`build this office layout from D:\plans\level2.pdf`). Boom shows it to GPT, GPT finds its scale from a written dimension and checks it on a second one, lays the plan under the model at real size, builds on it and checks the top view against it.
+- **Compare with a reference (Three.js):** `web_inspect` compares the model with a picture, a drawing with sections, or a `.glb` from the same camera, with a picture of where the form differs and cuts, and checks for gaps that show the structure inside. With no reference given, the AI finds its own and says which parts it assumed.
 - **In your own model:** edit or update an object, or `make a new chair in place of the object named Chair 3`. The new one stands where the old one stood, turned the same way; the old one is hidden on the tag "Replaced by Boom", not deleted, and one Undo takes the change back.
 - **Clicking in the AI's SketchUp window is fine:** look around or click while it works; GPT carries on in the same file instead of opening it again.
 - **The checks and what you asked for are on the task card:** the know-how the work follows, the checks it must pass (for example the load path of a chair, or comparing with your reference picture), and each thing you asked for with GPT's answer. The work is not marked done while one is open.

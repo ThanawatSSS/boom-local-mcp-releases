@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-11-03 · รุ่นล่าสุดที่ปล่อยแล้ว: r59 (0.5.5-11) · [English below](#english)
+อัปเดต 2026-11-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r60 (0.6.0-1) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,16 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r60 (0.6.0-1): ตรวจงานเทียบกับแบบ และตอบการ์ดอนุมัติด้วยคีย์บอร์ด
+
+- **Enter อนุมัติ, Esc ปฏิเสธ:** ใช้ได้บนแถบตอน Boom ใช้หน้าจอ ใน Boom Control และหน้าอนุมัติบนเครื่อง ปุ่มที่ AI กดเองไม่นับ การ์ดสีแดงต้องกด Enter ค้าง การ์ดในหน้าแชต ChatGPT ยังใช้การแตะหรือคลิกเหมือนเดิม
+- **`web_inspect` เทียบกับแบบได้:** รูป แบบที่มีหน้าตัด หรือไฟล์ `.glb` จากกล้องเดียวกัน พร้อมภาพจุดที่ฟอร์มต่างและภาพตัด
+- **ตรวจช่องโหว่และรอยต่อ:** มองรอบคันว่าเห็นโครงด้านในผ่านช่องไหม (`web_inspect` และ `blender_inspect`) และพิสูจน์รอยต่อแต่ละชนิดบนหน้าเว็บ
+- **Must-read ตามประเภทงาน:** ข้อที่เป็นหลักการใช้กับทุกงาน ข้ออื่นส่งเฉพาะงานประเภทนั้น
+- **Know-how:** AI แยกได้ว่าอะไรต้องหาเองกับอะไรต้องถาม หาแบบเองเมื่อไม่ได้ให้มา มีหัวข้อใหม่ "การทำงานอย่างมีหลักการ" และเลิกกฎเก่าที่ทำให้มุมกลมไปหมด
+
+ยังไม่มี: หามุมกล้องจากรูปเดียวโดยอัตโนมัติ
 
 ## ปล่อยแล้วใน r59 (0.5.5-11): คำอธิบายใหม่ทั้งหมด, Code mode ใช้ได้จริง และอัปเดตไม่ล้มกลางทาง
 
@@ -227,7 +237,7 @@ r59 รวมทุกอย่างของ r58 ซึ่งไม่ได�
 
 ## English
 
-Updated 2026-11-03 · latest release: r59 (0.5.5-11)
+Updated 2026-11-07 · latest release: r60 (0.6.0-1)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -249,6 +259,16 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r60 (0.6.0-1): check work against its reference, and answer the approval card with keys
+
+- **Enter approves, Esc denies:** on the bar while Boom uses the screen, in Boom Control and on the local approval page. A key the AI sends does not count, and a red card needs Enter held down. The card in the ChatGPT chat still takes a tap or a click.
+- **`web_inspect` compares with a reference:** a picture, a drawing with sections, or a `.glb`, from the same camera, with a picture of where the form differs and cuts.
+- **Gaps and joints:** a look from all round for structure showing through gaps (`web_inspect` and `blender_inspect`), and each kind of joint proved on web pages.
+- **Must-read by kind of work:** principles go with all work; the others only with their own kind.
+- **Know-how:** what to find from what to ask, finding a reference when none is given, a new item on working by principle, and an old rule that rounded every edge is gone.
+
+Not yet: finding the camera of a single picture automatically.
 
 ### Released in r59 (0.5.5-11): every guidance text rewritten, code mode works, and updates no longer stop halfway
 
