@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-11-07 · รุ่นล่าสุดที่ปล่อยแล้ว: r61 (0.6.0-2) · [English below](#english)
+อัปเดต 2026-11-16 · รุ่นล่าสุดที่ปล่อยแล้ว: r62 (0.6.0-3) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,13 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r62 (0.6.0-3): Boom Control ตอบสนองทันที, Know-how ตามสายงาน และอัปเดตไม่ติดเพราะ MCP
+
+- **Boom Control:** กดแล้วเห็นทันทีว่ากำลังทำ (ปุ่มหมุน แถบด้านบน) หน้าที่เปิดอยู่อัปเดตเองโดยไม่ต้องสลับหน้า การอัปเดต Boom มีแถบความคืบหน้าและขั้นตอน เมนูแบ่งเป็นกลุ่มชัดเจน ส่วนรองพับเก็บไว้
+- **Know-how:** บังคับอ่านส่งเฉพาะงานสายนั้น และไม่เกินขนาดที่แชตรับได้ หลักที่ใช้กับทุกงานเหลือ 2 หัวข้อ (เข้าใจงาน และทำงานอย่างมีหลักการ รวมถึงการเลือกเครื่องมือและวิธีแบบมืออาชีพ) คลังเหลือ 19 หัวข้อ หัวข้อที่รวมหรือเอาออกเก็บสำรองไว้ครบ
+- **อัปเดตและย้อนรุ่น:** ไฟล์ของ Boom ที่ถูกแก้ระหว่างอัปเดต MCP ของแอป ไม่ทำให้อัปเดตหยุดอีก (เก็บสำรองไฟล์เดิมไว้ และยังตรวจลายเซ็นทุกไฟล์) ย้อนกลับรุ่นได้แม้รุ่นนั้นเคยซ่อมไฟล์ และ MCP ที่เพิ่มไว้ยังอยู่ครบหลังอัปเดตหรือย้อนรุ่น
+- **เส้นสีเหลืองรอบจอ:** ไม่ได้มาจาก Boom แต่มาจาก Computer Use ของแอป Codex ที่ยังจับภาพหน้าจออยู่ ปิดแอป Codex แล้วเส้นจะหายไป
 
 ## ปล่อยแล้วใน r61 (0.6.0-2): รองรับปลั๊กอิน SketchUp 0.4.0+ อัตโนมัติ และซ่อมไฟล์ที่ถูกแก้ไขก่อนอัปเดตได้
 
@@ -242,7 +249,7 @@ r59 รวมทุกอย่างของ r58 ซึ่งไม่ได�
 
 ## English
 
-Updated 2026-11-07 · latest release: r61 (0.6.0-2)
+Updated 2026-11-16 · latest release: r62 (0.6.0-3)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -264,6 +271,13 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r62 (0.6.0-3): a live Boom Control, know-how by line of work, and updates that MCP changes no longer stop
+
+- **Boom Control:** every press shows it is working (a spinner, a bar at the top), the open page refreshes itself, a Boom update shows a progress bar and its steps, the menu is in clear groups, and secondary lists fold away.
+- **Know-how:** a must-read item reaches only work of its line, within a size a chat can take. The core for all work is two items (understanding the work; working by principle, now with choosing tools and methods as the best in the field do). The library is 19 items; merged or removed items are kept in an archive.
+- **Update and downgrade:** a Boom file changed while an app's MCP was updated no longer stops an update (a copy is kept, every file is still checked against the signature); a repaired update can be undone; MCP servers the user added survive an update or a downgrade.
+- **The yellow line round the screen** is not Boom's: Codex's Computer Use keeps a screen capture open. Closing the Codex app removes it.
 
 ### Released in r61 (0.6.0-2): SketchUp 0.4.0+ out of the box, and confirmed repair updates
 
