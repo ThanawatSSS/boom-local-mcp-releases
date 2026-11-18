@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-11-16 · รุ่นล่าสุดที่ปล่อยแล้ว: r62 (0.6.0-3) · [English below](#english)
+อัปเดต 2026-11-18 · รุ่นล่าสุดที่ปล่อยแล้ว: r63 (0.6.0-4) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,12 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน r63 (0.6.0-4): การ์ดงานอัปเดตตัวเอง, แก้ Word หลายไฟล์ในครั้งเดียว และวัดว่าช้าตรงไหน
+
+- **การ์ดงานอัปเดตตัวเอง:** AI ไม่ต้องรายงานความคืบหน้าอีก (เดิมกินไปราว 18% ของการเรียกเครื่องมือทั้งหมด) Boom เปิดการ์ดให้เองเมื่อ AI เริ่มทำงาน และขยับขั้น สำรวจ → ลงมือ → ตรวจ → ส่งมอบ จากเครื่องมือที่ AI ใช้ การ์ดและ Boom Control บอกสิ่งที่ทำล่าสุด เวลาที่ใช้ และกำลังรอใคร (รอคุณอนุมัติ / Boom กำลังทำ / AI กำลังคิด) ไม่มีงานต่อ 30 นาทีขึ้นว่าพัก และปิดเองหลัง 3 ชั่วโมง งานที่ต้องใส่ requirement หรือแผนหลายขั้น AI ยังเปิดการ์ดเองได้เหมือนเดิม
+- **แก้ Word หลายไฟล์ในครั้งเดียว (`word_batch_edit`):** แก้หลายจุดในหลายไฟล์ด้วยการเรียกครั้งเดียว เปิด Word ครั้งเดียว สำรองไฟล์เดิมไว้ก่อน ตรวจผลหลังบันทึก และรายงานทีละไฟล์ทีละจุด ลองดูก่อนได้โดยไม่แก้จริง (เร็วกว่าแก้ทีละจุดราว 5 เท่า)
+- **วัดว่าช้าตรงไหน:** Boom จับเวลาทุกการเรียกเครื่องมือ และเมื่อ Boom ค้างจะบันทึกว่าแต่ละส่วนกำลังทำอะไรอยู่ เป็นข้อมูลสำหรับทำให้ Boom เร็วขึ้นในรุ่นต่อไป
 
 ## ปล่อยแล้วใน r62 (0.6.0-3): Boom Control ตอบสนองทันที, Know-how ตามสายงาน และอัปเดตไม่ติดเพราะ MCP
 
@@ -249,7 +255,7 @@ r59 รวมทุกอย่างของ r58 ซึ่งไม่ได�
 
 ## English
 
-Updated 2026-11-16 · latest release: r62 (0.6.0-3)
+Updated 2026-11-18 · latest release: r63 (0.6.0-4)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -271,6 +277,12 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in r63 (0.6.0-4): a task card that keeps itself, many Word edits in one call, and timing that shows where time goes
+
+- **The task card keeps itself:** the AI no longer reports its progress (about 18% of all tool calls went to that). Boom opens a card when the AI starts work and moves it through explore → do → check → deliver from the tools the AI uses. The card and Boom Control show the last action, the time spent and who the work waits on (your approval, Boom, or the AI thinking). After 30 minutes with no work the card rests; after 3 hours it closes itself. For work with requirements or a step plan, the AI can still open a card itself.
+- **Many Word edits in one call (`word_batch_edit`):** many edits across many Word files in one call and one Word, with a backup first, a check after saving and a report per file and per edit; a dry run shows what would change. About five times faster than one edit at a time.
+- **Where time goes:** Boom times every tool call, and when Boom stalls it records what each part was doing. This is the measurement for making Boom faster next.
 
 ### Released in r62 (0.6.0-3): a live Boom Control, know-how by line of work, and updates that MCP changes no longer stop
 
