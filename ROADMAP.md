@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-11-18 · รุ่นล่าสุดที่ปล่อยแล้ว: r63 (0.6.0-4) · [English below](#english)
+อัปเดต 2026-11-19 · รุ่นล่าสุดที่ปล่อยแล้ว: 0.7 (r64, 0.7.0-1) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,16 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน 0.7 (r64, 0.7.0-1): วัดผลงานจริง, AI เห็นเครื่องมือน้อยลง, Boom เห็นจอเป็นข้อความ และดูจอ AI ได้
+
+- **วัดผลจากงานจริง:** ทุกงาน Boom นับเองว่า AI ใช้กี่รอบ เวลาไปอยู่ที่ AI คิด / Boom ทำ / รอคุณ เท่าไร และเรียกคำสั่งซ้ำกี่ครั้ง ไม่ต้องให้ AI รายงาน
+- **"คุ้มไหม?" ใน Boom Control:** ให้คะแนนแต่ละงานได้ บอกได้ว่าถ้าทำเองใช้กี่นาที และงานถูกหรือต้องแก้ หน้า "วัดผล" เทียบสัปดาห์นี้กับสัปดาห์ก่อน แยกตามแอป AI ให้คะแนนได้เฉพาะคุณ
+- **AI เห็นเครื่องมือน้อยลง เร็วขึ้น:** ChatGPT, Codex และแอปอื่นที่ไม่ใช่ Claude เห็นเครื่องมือหลัก 48 ตัวที่ใช้กันจริง (ประหยัดราว 24,000 token ต่อแชต) เครื่องมือที่เหลือ AI ค้นด้วย `tool_find` แล้วสั่งด้วย `tool_use` ผ่านการอนุมัติเหมือนเรียกตรง Claude ยังเห็นครบ ตั้งกลับเป็นทุกเครื่องมือได้ในหน้า "แอป AI" **หลังอัปเดต ให้กด Refresh ที่ Connector ของ Boom ใน ChatGPT หนึ่งครั้ง**
+- **Boom เห็นจอเป็นข้อความ:** `cu_view` บอกเฉพาะสิ่งที่เปลี่ยนจากครั้งก่อน พร้อมหน้าต่างหรือ dialog ที่เพิ่งเปิดหรือปิด และ `cu_steps` ตรวจแต่ละขั้นเองว่าจอเป็นอย่างที่คาดไหม หยุดเองเมื่อไม่ใช่ โดยไม่ต้องถาม AI ทุกขั้น
+- **ดูจอ AI (Live View):** เห็นหน้าต่างที่ AI ทำงานอยู่ พร้อมกรอบปุ่มที่ AI อ่านและจุดที่ทำล่าสุด เปิดเฉพาะตอนมีงานหรือกด "ดูตอนนี้" ปิดได้ ภาพอยู่ในเครื่องนี้เท่านั้น ไม่ส่งให้ AI
+- **ปิดดำหน้าต่างรหัสผ่านและการเงิน:** ตัวจัดการรหัสผ่าน ธนาคาร หน้าชำระเงินและกรอกบัตร ถูกปิดดำทั้งในดูจอ AI และภาพที่ส่งให้ AI และ AI ดูหรือควบคุมหน้าต่างเหล่านั้นไม่ได้ เพิ่มรายการเองได้ในหน้า "ตั้งค่า"
+- **การ์ดอนุมัติตอบทันที:** กด Enter หรือ Esc แล้วการ์ดขึ้น "อนุมัติแล้ว" หรือ "ไม่อนุมัติ" ทันที การ์ดสีแดงบอกให้กด Enter ค้างและมีแถบเต็มเมื่อครบ และทุกการ์ดบอกปุ่มที่ใช้ได้
 
 ## ปล่อยแล้วใน r63 (0.6.0-4): การ์ดงานอัปเดตตัวเอง, แก้ Word หลายไฟล์ในครั้งเดียว และวัดว่าช้าตรงไหน
 
@@ -255,7 +265,7 @@ r59 รวมทุกอย่างของ r58 ซึ่งไม่ได�
 
 ## English
 
-Updated 2026-11-18 · latest release: r63 (0.6.0-4)
+Updated 2026-11-19 · latest release: 0.7 (r64, 0.7.0-1)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -277,6 +287,16 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in 0.7 (r64, 0.7.0-1): real-use measurement, fewer tools for AI apps, the screen as text, and Live View
+
+- **Measured from real work:** for every task Boom counts the AI's rounds, where the time went (AI thinking, Boom working, waiting for you) and repeated calls. The AI reports nothing.
+- **"Worth it?" in Boom Control:** rate each task, optionally with the minutes it would have taken by hand and whether it was right. The "วัดผล" page compares this week with last week per AI app. Only you can rate.
+- **Fewer tools, faster chats:** ChatGPT, Codex and other apps that are not Claude see the 48 core tools that are really used (about 24,000 fewer tokens per chat); `tool_find` finds the rest and `tool_use` runs one through the same approvals as a direct call. Claude apps keep the full list. Switch back to all tools on the "แอป AI" page. **After updating, press Refresh on Boom's connector in ChatGPT once.**
+- **The screen as text:** `cu_view` can return only what changed since the last look, with the windows and dialogs that opened or closed, and `cu_steps` checks each step's expected result itself and stops when the screen is not what was expected, without asking the AI at every step.
+- **Live View ("ดูจอ AI"):** see the window the AI works in, with the controls it read and its last action. On only while work runs or when you press "ดูตอนนี้"; it can be turned off; the picture stays on this PC and never goes to an AI.
+- **Password and money windows are black:** password managers, banking, payment and card-entry pages are black in Live View and in every picture sent to an AI, and the AI cannot read or operate them. Add your own entries in Settings.
+- **The approval card answers at once:** after Enter or Esc the card says so immediately; a red card says to hold Enter and fills a bar; every card shows its keys.
 
 ### Released in r63 (0.6.0-4): a task card that keeps itself, many Word edits in one call, and timing that shows where time goes
 
