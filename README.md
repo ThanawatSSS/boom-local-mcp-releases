@@ -95,7 +95,7 @@ Software:
 - **Where files go:** say it in your request (`save it in D:\3D_models\chairs`); if you don't, GPT asks. There is no list of folders to set up. Boom never touches Windows, installed programs, apps' settings and sign-ins, its own data or secret files.
 - **Your apps can be anywhere.** Boom finds them on your PC, including other drives, and remembers where each app was opened from. If an app is somewhere Boom cannot find (a portable copy, for example), tell GPT its full path once.
 
-**Following the work:** the task card shows what Boom itself saw last (for example "writing build.rb", "opening SketchUp"), and "ChatGPT is thinking or writing" (or the name of the AI app doing the work) when no command has come for a while, so you can tell where the work is even when the AI reports its steps late.
+**Following the work:** the task card shows what Boom itself saw last (for example "writing build.rb", "opening SketchUp"), and that the AI is thinking or writing when no command has come for a while, so you can tell where the work is even when the AI reports its steps late.
 
 Add your own know-how: put folders with a `SKILL.md` in `%LOCALAPPDATA%\BoomLocalMCP\knowhow`. Boom reads them as text only, never runs scripts that come with them, and know-how can never skip an approval.
 

@@ -1,6 +1,6 @@
 # Boom Local MCP — แผนงาน (Roadmap)
 
-อัปเดต 2026-11-19 · รุ่นล่าสุดที่ปล่อยแล้ว: 0.7 (r64, 0.7.0-1) · [English below](#english)
+อัปเดต 2026-11-20 · รุ่นล่าสุดที่ปล่อยแล้ว: 0.7.2 (r65, 0.7.2-1) · [English below](#english)
 
 แผนนี้บอกลำดับงาน ไม่ใช่วันที่ แต่ละเรื่องจะออกแบบให้เสร็จก่อนเขียนโค้ด และไม่มีเรื่องไหนลดความปลอดภัยของ Boom: การอนุมัติ การบันทึกทุกคำสั่ง และการตัดสินใจสุดท้ายของคุณยังอยู่ใน Boom เสมอ
 
@@ -16,6 +16,18 @@
 ทดลองแล้ว: เก้าอี้ตัวเดียวกันทำสองแบบ แบบที่ใช้ Know-how ได้งานที่ใช้จริงได้ ส่วนแบบที่ไม่ใช้ได้แค่ Mock-up และรุ่นละเอียดพิเศษ ข้อต่อทุกจุดเข้ากันพอดี ไม่มีชิ้นไหนทับกัน ถอดเข้าออกได้ครบทุกขั้น
 
 ดูวิธีใช้ในคู่มือ หัวข้อ 7
+
+## ปล่อยแล้วใน 0.7.2 (r65, 0.7.2-1): การ์ดงานแบบใหม่ ทำต่อในของที่เปิดอยู่ และ Dev Server ไม่ซ้อนกัน
+
+- **หนึ่งเป้าหมาย หนึ่งการ์ด:** ตั้งแผนทีหลังก็ยังเป็นใบเดิม ส่งงานต่อไปอีกแชตหรืออีกแอปด้วยรหัสงานก็ยังเป็นใบเดิม เงียบนานแค่ไหนการ์ดก็ไม่ขึ้นว่า "เสร็จ" แค่ "พักไว้" และทำต่อได้เสมอ
+- **การ์ดบอก 5 อย่างก่อน:** เป้าหมาย สถานะคำเดียว ผลล่าสุด สิ่งที่ยังไม่ได้ตรวจ และขั้นถัดไป รายละเอียดอื่นพับไว้ใต้ "รายละเอียด"
+- **"เสร็จ" ต้องมีคนตรวจ:** AI บอกว่าเสร็จแต่ยังมีข้อที่ยังไม่ได้ตรวจ การ์ดขึ้น "รอตรวจ" กด "ยอมรับว่าเสร็จ" หรือ "ยอมรับทั้งหมด" ใน Boom Control ได้ งานที่ไม่มีข้อตรวจขึ้น "เสร็จ (AI แจ้ง)" ไม่ต้องกดอะไร
+- **บอกผู้ทำตามจริง:** แอปที่ Boom ยืนยันไม่ได้ขึ้น "ไม่ทราบแอป" ไม่เดาว่าเป็น ChatGPT ต่อ Codex เป็นแอปในเครื่องได้จากหน้า "แอป AI"
+- **ทำต่อในของที่เปิดอยู่:** แอป หน้าต่าง แท็บ ไฟล์ Excel Word SketchUp Blender และ Dev Server ถ้าเปิดอยู่แล้ว Boom ใช้ตัวเดิมเป็นค่าเริ่มต้น และบอก AI ว่ามีตัวอื่นที่อาจเป็นอีกไหม สั่งเปิดใหม่ได้เสมอ ไฟล์เดิมจะไม่ถูกเปิดซ้ำเฉพาะเมื่อยืนยันได้ว่าเป็นไฟล์เดียวกันจริง และแท็บในเบราว์เซอร์ของคุณใช้ซ้ำเฉพาะหน้าเดียวกันจริง
+- **Dev Server:** เปิดอยู่แล้วใช้ตัวเดิม สั่งเปิดพร้อมกันได้ตัวเดียว หยุดแล้วหยุดทั้งชุดและตรวจก่อนบอกว่าหยุด แก้ package.json หรือ .env แล้ว Boom บอกให้รีสตาร์ตตัวเดิมแทนการเปิดตัวที่สอง Boom รีสตาร์ตแล้ว Dev Server หยุดตาม Boom จำไว้และบอกตรง ๆ
+- **Boom Control หน้า "งาน" ใหม่:** ต้องดู / กำลังทำ / พักไว้ / จบแล้ว, "งานนี้กำลังใช้อะไร", "คัดลอกข้อความทำต่อ", ปิดงานกับหยุดโปรแกรมแยกกัน และวัดผลรวมงานย่อยที่งานแม่
+- ก่อนปรับฐานข้อมูลงานครั้งแรก Boom สำรอง `tasks.sqlite3` ไว้เป็น `tasks.sqlite3.pre-0.7.2.bak`
+- **หลังอัปเดต ให้กด Refresh ที่ Connector ของ Boom ใน ChatGPT หนึ่งครั้ง**
 
 ## ปล่อยแล้วใน 0.7 (r64, 0.7.0-1): วัดผลงานจริง, AI เห็นเครื่องมือน้อยลง, Boom เห็นจอเป็นข้อความ และดูจอ AI ได้
 
@@ -265,7 +277,7 @@ r59 รวมทุกอย่างของ r58 ซึ่งไม่ได�
 
 ## English
 
-Updated 2026-11-19 · latest release: 0.7 (r64, 0.7.0-1)
+Updated 2026-11-20 · latest release: 0.7.2 (r65, 0.7.2-1)
 
 This plan gives the order, not dates. Each item is designed before it is coded. None of them weakens Boom's safety: approvals, the record of every command and your final decision always stay in Boom.
 
@@ -287,6 +299,18 @@ Every AI works the same craftsperson's way, so the results are things you can us
 Tried already: the same chair built both ways. With know-how it was usable; without it, a mock-up. The buildable version fits at every joint, no two parts overlap, and it comes apart and goes back together at every step.
 
 See section 7 of the guide.
+
+### Released in 0.7.2 (r65, 0.7.2-1): a new task card, continue in what is open, and no doubled dev servers
+
+- **One goal, one card:** a plan set later fills the same card, and a card handed to another chat or app by its task id stays the same card. Silence never makes a card "done": it reads "paused" and can always be continued.
+- **The card shows five things first:** the goal, one status word, the latest result, what is not checked yet, and the next step. Everything else folds under "รายละเอียด".
+- **"Done" needs a check:** when the AI says done and something is still unchecked, the card reads "waiting for review"; accept it (or all of them) in Boom Control. A task with no checks reads "done (AI says)" and needs nothing from you.
+- **Who did the work, as it is:** an app Boom cannot confirm reads "unknown app" instead of a guessed "ChatGPT". Connect Codex as a local app from the "แอป AI" page.
+- **Continue in what is open:** apps, windows, tabs, files, Excel, Word, SketchUp, Blender and dev servers are reused by default when already open, and the AI is told about other candidates; asking for a new one always works. A file is not opened again only when Boom can verify it is the same file, and a tab of your own browser is reused only for the very same page.
+- **Dev servers:** reused when running; two starts at once give one server; a stop ends the whole tree and is checked before it is reported; a changed package.json or .env asks for a restart instead of a second server; after a Boom restart Boom says the server stopped with it.
+- **Boom Control's new "งาน" page:** needs you / working / paused / finished, "what this task is using", one "copy text to continue" button, closing a task apart from stopping its programs, and metrics added up at the parent task.
+- Before it first changes the task database, Boom keeps a copy as `tasks.sqlite3.pre-0.7.2.bak`.
+- **After updating, press Refresh on Boom's connector in ChatGPT once.**
 
 ### Released in 0.7 (r64, 0.7.0-1): real-use measurement, fewer tools for AI apps, the screen as text, and Live View
 
